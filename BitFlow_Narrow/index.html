@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+</head>
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="js/vendor/web3.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/abis.js"></script>
+<script src="js/departmentAPI.js"></script>
+<script src="js/main.js"></script>
+
+<body>
+<div class="container">
+
+    <button onclick="updateAll()">Update</button>
+    <br>
+    My address: <span id="myAddress"></span> has <br>
+    <table>
+        <tr>
+            <th>Ether</th>
+            <th>CDKK</th>
+            <th>BKK</th>
+        </tr>
+        <tr>
+            <td id="myBalance"></td>
+            <td id="myBalanceCDKK"></td>
+            <td id="myBalanceBKK"></td>
+        </tr>
+    </table>
+
+    <h3>Department:</h3>
+    <h4 id="nameOfCompany"></h4>
+    <div id="companyContainer"></div>
+
+    <div id="employees_div"></div>
+
+    <div id="department_subtree_div">
+        <h3>Department spending subtree</h3>
+
+        <h4>Total</h4>
+        <div id="line_chart_div"></div>
+
+        <h4>Table test</h4>
+        <div id="table_ul"></div>
+
+        <h4>Spending sankey chart</h4>
+        <div id="spending_sankey_chart_div"></div>
+
+        <h4>Budget</h4>
+        <div id="budget_sankey_chart_div"></div>
+    </div>
+
+    <div>
+        <h3>Department spending only</h3>
+
+        <h4>Department sankey sankey chart</h4>
+        <div id="spending_department_sankey_chart_div"></div>
+
+        <h4>Total</h4>
+        <div id="department_line_chart_div"></div>
+    </div>
+
+    <h3>Actions</h3>
+
+
+    <div>
+        <h4>Set supervisor</h4>
+        <input placeholder="Address" type="text" id="new_supervisor"> <br>
+        <button onclick="setSupervisorButton()">Set supervisor</button>
+    </div>
+
+    <div>
+        <h4>Set supervisor of child</h4>
+        <input placeholder="Address of child" type="text" id="child_department_for_supervisor"> <br>
+        <input placeholder="Address of supervisor" type="text" id="child_department_new_supervisor"> <br>
+        <button onclick="setSupervisorChildButton()">Set supervisor child</button>
+    </div>
+
+    <div>
+        <h4>Set treasuryaddress</h4>
+        <input placeholder="Address" type="text" id="new_treasury_address"> <br>
+        <button onclick="setTreasuryAddressButton()">Set treasuryaddress</button>
+    </div>
+
+    <div>
+        <h4>Create child department</h4>
+        <input placeholder="Address of creator" type="text" id="department_creator"> <br>
+        <input placeholder="Name of department" type="text" id="child_department_name"> <br>
+        <button onclick="createChildDepartmentButton()">Create child department</button>
+    </div>
+
+    <div>
+        <h4>Add child department</h4>
+        <input placeholder="Address of child" type="text" id="child_department_address_new"> <br>
+        <button onclick="addChildDepartmentButton()">Add child department</button>
+    </div>
+
+    <div>
+        <h4>Remove child department</h4>
+        <input placeholder="Address of child" type="text" id="child_department_address_remove"> <br>
+        <button onclick="removeChildDepartmentButton()">Add child department</button>
+    </div>
+
+    <div>
+        <h4>Transfer child department</h4>
+        <input placeholder="Address of child department" type="text" id="child_department_address_transfer"> <br>
+        <input placeholder="Address of new owner" type="text" id="child_department_new_owner"> <br>
+        <button onclick="transferChildDepartmentOwnershipButton()">Transfer child department</button>
+    </div>
+
+    <div>
+        <h4>Add employee</h4>
+        <input placeholder="Employee address" type="text" id="employee_address_add"> <br>
+        <button onclick="addEmployeeButton()">Add employee</button>
+    </div>
+
+    <div>
+        <h4>Remove employee</h4>
+        <input placeholder="Employee address" type="text" id="employee_address_remove"> <br>
+        <button onclick="removeEmployeeButton()">Remove employee</button>
+    </div>
+
+    <div>
+        <h4>Transfer internal coin, BKK</h4>
+        <input placeholder="Address" type="text" id="send_bkk_to"> <br>
+        <input placeholder="Amount" type="text" id="amount_bkk_to_send"> <br>
+        <button onclick="transferBKKButton()">Transfers Intern</button>
+    </div>
+
+    <div>
+        <h4>Transfer to outside, CDKK</h4>
+        <input placeholder="Address" type="text" id="send_cdkk_to"> <br>
+        <input placeholder="Amount" type="text" id="amount_cdkk_to_send"> <br>
+        <button onclick="transferCDKKButton()">Transfer Outside</button>
+    </div>
+
+</div>
+</body>
+</html>
