@@ -27,131 +27,230 @@
 <script src="js/plugins.js"></script>
 <script src="js/abis.js"></script>
 <script src="js/departmentAPI.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/main.js"></script>
 
 <body>
 <div class="container">
 
-    <button onclick="updateAll()">Update</button>
-    <br>
-    My address: <span id="myAddress"></span> has <br>
-    <table>
-        <tr>
-            <th>Ether</th>
-            <th>CDKK</th>
-            <th>BKK</th>
-        </tr>
-        <tr>
-            <td id="myBalance"></td>
-            <td id="myBalanceCDKK"></td>
-            <td id="myBalanceBKK"></td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content flow-text">
+                    My address: <br>
+                    <span id="myAddress" class="truncate"></span>
+                    <table class="centered responsive-table">
+                        <thead>
+                        <tr>
+                            <th>Ether</th>
+                            <th>CDKK</th>
+                            <th>BKK</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="myBalance"></td>
+                            <td id="myBalanceCDKK"></td>
+                            <td id="myBalanceBKK"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <button onclick="updateAll()" class="btn-flat blue-text waves-effect">Update</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
     <h3>Department:</h3>
-    <h4 id="nameOfCompany"></h4>
-    <div id="companyContainer"></div>
+    <div class="row">
 
-    <div id="employees_div"></div>
+        <div class="col s12 m6">
+            <h4 id="nameOfCompany"></h4>
+            <div id="companyContainer"></div>
+        </div>
 
-    <div id="department_subtree_div">
-        <h3>Department spending subtree</h3>
+        <div class="col s12 m6">
+            <p class="flow-text">Employees:</p>
+            <div id="employees_div"></div>
+        </div>
 
-        <h4>Total</h4>
-        <div id="line_chart_div"></div>
+        <div class="col s12">
+            <p class="flow-text">ChildDepartments:</p>
+            <div id="child_department_div"></div>
+        </div>
 
-        <h4>Table test</h4>
-        <div id="table_ul"></div>
-
-        <h4>Spending sankey chart</h4>
-        <div id="spending_sankey_chart_div"></div>
-
-        <h4>Budget</h4>
-        <div id="budget_sankey_chart_div"></div>
     </div>
 
-    <div>
-        <h3>Department spending only</h3>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a href="#department_subtree_div">Department subtree</a></li>
+                <li class="tab col s6"><a href="#department_div">Department</a></li>
+            </ul>
+        </div>
 
-        <h4>Department sankey sankey chart</h4>
-        <div id="spending_department_sankey_chart_div"></div>
+        <div id="department_subtree_div" class="col s12">
+            <h3>Department spending subtree</h3>
 
-        <h4>Total</h4>
-        <div id="department_line_chart_div"></div>
+            <div id="total_spending_div">
+                <h4>Total</h4>
+                <div id="line_chart_div"></div>
+            </div>
+
+            <h4>Table of budget / send</h4>
+            <div id="table_ul"></div>
+
+            <div id="spending_sankey_div">
+                <h4>Spending sankey chart</h4>
+                <div id="spending_sankey_chart_div"></div>
+            </div>
+
+            <div id="budget_sankey_div">
+                <h4>Budget</h4>
+                <div id="budget_sankey_chart_div"></div>
+            </div>
+        </div>
+
+        <div id="department_div" class="col s12">
+            <h3>Department spending only</h3>
+
+            <div id="spending_department_div">
+                <h4>Total</h4>
+                <div id="department_line_chart_div"></div>
+            </div>
+
+            <div id="spending_department_sankey_div">
+                <h4>Department sankey sankey chart</h4>
+                <div id="spending_department_sankey_chart_div"></div>
+            </div>
+        </div>
+
     </div>
 
-    <h3>Actions</h3>
+    <div class="divider"></div>
 
+    <div class="section" id="actions_div">
+        <h3>Actions</h3>
 
-    <div>
-        <h4>Set supervisor</h4>
-        <input placeholder="Address" type="text" id="new_supervisor"> <br>
-        <button onclick="setSupervisorButton()">Set supervisor</button>
+        <div class="row">
+            <div id="employee_div" class="section">
+                <div class="col s12 m4" id="change_budget_div">
+                    <h4>Change budget</h4>
+                    <input placeholder="Address to budget" type="text" id="address_to_budget"> <br>
+                    <input placeholder="Amount" type="text" id="amount_to_budget"> <br>
+                    <button onclick="changeBudgetButton()" class="blue-text waves-effect btn-flat">Change budget
+                    </button>
+                </div>
+
+                <div class="col s12 m4" id="transfer_bkk_div">
+                    <h4>Transfer internal coin, BKK</h4>
+                    <input placeholder="Address" type="text" id="send_bkk_to"> <br>
+                    <input placeholder="Amount" type="text" id="amount_bkk_to_send"> <br>
+                    <button onclick="transferBKKButton()" class="blue-text waves-effect btn-flat">Transfers Intern
+                    </button>
+                </div>
+
+                <div class="col s12 m4" id="transfer_cdkk_div">
+                    <h4>Transfer to outside, CDKK</h4>
+                    <input placeholder="Address" type="text" id="send_cdkk_to"> <br>
+                    <input placeholder="Amount" type="text" id="amount_cdkk_to_send"> <br>
+                    <button onclick="transferCDKKButton()" class="blue-text waves-effect btn-flat">Transfer Outside
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+            <div id="supervisor_and_so_div" class="section">
+
+                <div class="col s12 m6" id="set_supervisor_div">
+                    <h4>Set supervisor</h4>
+                    <input placeholder="Address" type="text" id="new_supervisor"> <br>
+                    <button onclick="setSupervisorButton()" class="blue-text waves-effect btn-flat">Set supervisor
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="set_supervisor_child_div">
+                    <h4>Set supervisor of child</h4>
+                    <input placeholder="Address of child" type="text" id="child_department_for_supervisor"> <br>
+                    <input placeholder="Address of supervisor" type="text" id="child_department_new_supervisor"> <br>
+                    <button onclick="setSupervisorChildButton()" class="blue-text waves-effect btn-flat">Set supervisor
+                        child
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="set_treasury_address_div">
+                    <h4>Set treasuryaddress</h4>
+                    <input placeholder="Address" type="text" id="new_treasury_address"> <br>
+                    <button onclick="setTreasuryAddressButton()" class="blue-text waves-effect btn-flat">Set
+                        treasuryaddress
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="create_child_department_div">
+                    <h4>Create child department</h4>
+                    <input placeholder="Address of creator" type="text" id="department_creator"> <br>
+                    <input placeholder="Name of department" type="text" id="child_department_name"> <br>
+                    <button onclick="createChildDepartmentButton()" class="blue-text waves-effect btn-flat">Create child
+                        department
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="add_child_department_div">
+                    <h4>Add child department</h4>
+                    <input placeholder="Address of child" type="text" id="child_department_address_new"> <br>
+                    <button onclick="addChildDepartmentButton()" class="blue-text waves-effect btn-flat">Add child
+                        department
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="remove_child_department_div">
+                    <h4>Remove child department</h4>
+                    <input placeholder="Address of child" type="text" id="child_department_address_remove"> <br>
+                    <button onclick="removeChildDepartmentButton()" class="blue-text waves-effect btn-flat">Add child
+                        department
+                    </button>
+                </div>
+
+                <div class="col s12 m6" id="transfer_child_department_div">
+                    <h4>Transfer child department</h4>
+                    <input placeholder="Address of child department" type="text" id="child_department_address_transfer">
+                    <br>
+                    <input placeholder="Address of new owner" type="text" id="child_department_new_owner"> <br>
+                    <button onclick="transferChildDepartmentOwnershipButton()" class="blue-text waves-effect btn-flat">
+                        Transfer child
+                        department
+                    </button>
+                </div>
+
+                <div class="col s12 m6 " id="add_employee_div">
+                    <h4>Add employee</h4>
+                    <input placeholder="Employee address" type="text" id="employee_address_add"> <br>
+                    <button onclick="addEmployeeButton()" class="blue-text waves-effect btn-flat">Add employee</button>
+                </div>
+
+                <div class="col s12 m6" id="remove_employee_div">
+                    <h4>Remove employee</h4>
+                    <input placeholder="Employee address" type="text" id="employee_address_remove"> <br>
+                    <button onclick="removeEmployeeButton()" class="blue-text waves-effect btn-flat">Remove employee
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div>
-        <h4>Set supervisor of child</h4>
-        <input placeholder="Address of child" type="text" id="child_department_for_supervisor"> <br>
-        <input placeholder="Address of supervisor" type="text" id="child_department_new_supervisor"> <br>
-        <button onclick="setSupervisorChildButton()">Set supervisor child</button>
-    </div>
-
-    <div>
-        <h4>Set treasuryaddress</h4>
-        <input placeholder="Address" type="text" id="new_treasury_address"> <br>
-        <button onclick="setTreasuryAddressButton()">Set treasuryaddress</button>
-    </div>
-
-    <div>
-        <h4>Create child department</h4>
-        <input placeholder="Address of creator" type="text" id="department_creator"> <br>
-        <input placeholder="Name of department" type="text" id="child_department_name"> <br>
-        <button onclick="createChildDepartmentButton()">Create child department</button>
-    </div>
-
-    <div>
-        <h4>Add child department</h4>
-        <input placeholder="Address of child" type="text" id="child_department_address_new"> <br>
-        <button onclick="addChildDepartmentButton()">Add child department</button>
-    </div>
-
-    <div>
-        <h4>Remove child department</h4>
-        <input placeholder="Address of child" type="text" id="child_department_address_remove"> <br>
-        <button onclick="removeChildDepartmentButton()">Add child department</button>
-    </div>
-
-    <div>
-        <h4>Transfer child department</h4>
-        <input placeholder="Address of child department" type="text" id="child_department_address_transfer"> <br>
-        <input placeholder="Address of new owner" type="text" id="child_department_new_owner"> <br>
-        <button onclick="transferChildDepartmentOwnershipButton()">Transfer child department</button>
-    </div>
-
-    <div>
-        <h4>Add employee</h4>
-        <input placeholder="Employee address" type="text" id="employee_address_add"> <br>
-        <button onclick="addEmployeeButton()">Add employee</button>
-    </div>
-
-    <div>
-        <h4>Remove employee</h4>
-        <input placeholder="Employee address" type="text" id="employee_address_remove"> <br>
-        <button onclick="removeEmployeeButton()">Remove employee</button>
-    </div>
-
-    <div>
-        <h4>Transfer internal coin, BKK</h4>
-        <input placeholder="Address" type="text" id="send_bkk_to"> <br>
-        <input placeholder="Amount" type="text" id="amount_bkk_to_send"> <br>
-        <button onclick="transferBKKButton()">Transfers Intern</button>
-    </div>
-
-    <div>
-        <h4>Transfer to outside, CDKK</h4>
-        <input placeholder="Address" type="text" id="send_cdkk_to"> <br>
-        <input placeholder="Amount" type="text" id="amount_cdkk_to_send"> <br>
-        <button onclick="transferCDKKButton()">Transfer Outside</button>
+    <div id="modal_for_transactions" class="modal modal-fixed-footer">
+        <div class="modal-content" id="modal_transaction_content"></div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close blue-text waves-effect btn-flat">Ok</a>
+        </div>
     </div>
 
 </div>

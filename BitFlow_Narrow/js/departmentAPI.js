@@ -15,7 +15,7 @@ function setSupervisor(_newSupervisor) {
     if (provider.isAddress(_newSupervisor)) {
         department.setSupervisor.sendTransaction(_newSupervisor, {
             from: address,
-            gas: 100000,
+            gas: 200000,
             gasPrice: getGasPrice()
         }, submitter);
     } else {
@@ -27,7 +27,7 @@ function setSupervisorChild(_childDepartment, _newSupervisor) {
     if (provider.isAddress(_newSupervisor) && provider.isAddress(_newSupervisor)) {
         department.setSupervisorChild.sendTransaction(_childDepartment, _newSupervisor, {
             from: address,
-            gas: 150000,
+            gas: 200000,
             gasPrice: getGasPrice()
         }, submitter);
     } else {
@@ -42,7 +42,7 @@ function setTreasuryAddress(_treasuryAddress) {
     }
     department.setTreasuryAddress.sendTransaction(_treasuryAddress, {
         from: address,
-        gas: 100000,
+        gas: 200000,
         gasPrice: getGasPrice()
     }, submitter);
 }
@@ -103,7 +103,7 @@ function addEmployee(_employee) {
     }
     department.addEmployee.sendTransaction(_employee, {
         from: address,
-        gas: 100000,
+        gas: 200000,
         gasPrice: getGasPrice()
     }, submitter);
 }
@@ -115,7 +115,7 @@ function removeEmployee(_employee) {
     }
     department.removeEmployee.sendTransaction(_employee, {
         from: address,
-        gas: 100000,
+        gas: 200000,
         gasPrice: getGasPrice()
     }, submitter);
 }
@@ -125,11 +125,10 @@ function changeBudget(_to, _amount) {
         console.log("Ugyldig addresse");
         return;
     }
-    var amountInBKK = Math.floor(_amount * 100);
-    department.changeBudget.sendTransaction(_to, amountInBKK, {
+    department.changeBudget.sendTransaction(_to, _amount, {
         from: address,
-        gas: 100000,
-        gasPrice: getGasPrice()
+        gas: 400000
+//        gasPrice: getGasPrice()
     }, submitter);
 }
 
