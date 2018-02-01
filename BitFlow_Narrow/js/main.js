@@ -26,9 +26,12 @@ var transfersFrom = {};
 var transfersTo = {};
 var budget = {};
 
+var economy = new Object();
+
 var lineDataSpending, lineDataSpendingAccumulative, lineChartSpending;
 var lineDataSpendingDepartment, lineDataSpendingDepartmentAccumulative, lineChartSpendingDepartment;
 var sankeyDataBudget, sankeyChartBudget;
+var sankeyDataBudgetDepartment, sankeyChartBudgetDepartment;
 var sankeyDataSpending, sankeyChartSpending;
 var sankeyDataSpendingDepartment, sankeyChartSpendingDepartment;
 
@@ -65,7 +68,6 @@ $(document).ready(function () {
     if (tempAddress !== undefined) {
         departmentAddress = tempAddress;
     }
-
 
     $('ul.tabs').tabs({onShow: redraw});
     $('.modal').modal();
@@ -120,7 +122,6 @@ function updateCompany() {
     department.getChildDepartmentCount(function (error, howMany) {
         $("#child_department_div").empty();
 
-
         for (var i = 0; i < howMany; i++) {
             department.childDepartmentList(i, function (error, data) {
                 if (data !== "0x0000000000000000000000000000000000000000") {
@@ -128,6 +129,8 @@ function updateCompany() {
                     a.href = "./index.html?address=" + data;
                     a.innerText = data;
                     document.getElementById("child_department_div").appendChild(a);
+                    var br = document.createElement("br");
+                    document.getElementById("child_department_div").appendChild(br);
                 }
             });
         }
@@ -190,12 +193,13 @@ function getDateFromTime(value) {
 function drawCharts() {
     updateDepartmentMapping(department.address);
     drawSankeyChartBudget();
-    updateBudget();
+    drawSankeyChartBudgetDepartment();
     drawLineChart();
     drawLineChartDepartment();
     drawSankeyChartSpending();
     drawSankeyChartSpendingDepartment();
     setupData();
+    updateBudget();
 }
 
 function drawLineChart() {
@@ -230,7 +234,7 @@ function drawLineChartDepartment() {
 function addDatapointTransfer(date, value) {
     var tempDate = new Date(date * 1000);
     var tempValue = value;
-    lineDataSpending.addRow([tempDate, value, budget["12"]]);
+    lineDataSpending.addRow([tempDate, value, budgetOutOfCompany(economy)]);
     lineDataSpending.sort([{column: 0}]);
     lineDataSpendingAccumulative.removeRows(0, lineDataSpendingAccumulative.getNumberOfRows());
 
@@ -239,14 +243,14 @@ function addDatapointTransfer(date, value) {
         tempDate = lineDataSpending.getValue(i, 0);
         tempValue = lineDataSpending.getValue(i, 1);
         if (index === -1) {
-            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budget["12"]]);
+            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budgetOutOfCompany(economy)]);
             index++;
         } else if (tempDate.getHours() === lineDataSpendingAccumulative.getValue(index, 0).getHours()) {
             var temp2 = lineDataSpendingAccumulative.getValue(index, 1);
-            lineDataSpendingAccumulative.addRow([tempDate, temp2 + tempValue, budget["12"]]);
+            lineDataSpendingAccumulative.addRow([tempDate, temp2 + tempValue, budgetOutOfCompany(economy)]);
             index++;
         } else {
-            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budget["12"]]);
+            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budgetOutOfCompany(economy)]);
             index++;
         }
     }
@@ -259,7 +263,7 @@ function addDatapointTransferDepartment(date, value) {
 
     var tempDate = new Date(date * 1000);
     var tempValue = value;
-    lineDataSpendingDepartment.addRow([tempDate, value, budget["12"]]);
+    lineDataSpendingDepartment.addRow([tempDate, value, budgetOutOfDepartment()]);
     lineDataSpendingDepartment.sort([{column: 0}]);
 
     lineDataSpendingDepartmentAccumulative.removeRows(0, lineDataSpendingDepartmentAccumulative.getNumberOfRows());
@@ -273,10 +277,10 @@ function addDatapointTransferDepartment(date, value) {
             index++;
         } else if (tempDate.getHours() === lineDataSpendingDepartmentAccumulative.getValue(index, 0).getHours()) {
             var temp2 = lineDataSpendingDepartmentAccumulative.getValue(index, 1);
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, temp2 + tempValue, budget["12"]]);
+            lineDataSpendingDepartmentAccumulative.addRow([tempDate, temp2 + tempValue, budgetOutOfDepartment()]);
             index++;
         } else {
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budget["12"]]);
+            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budgetOutOfDepartment()]);
             index++;
         }
     }
@@ -302,98 +306,225 @@ function updateDepartmentMapping(_contractAddress) {
 
 function updateBudget() {
     budget["total"] = 0;
-    buildBudgetSpendingTable(department.address, budget["total"], document.getElementById("table_ul"));
-    $('.collapsible').collapsible();
     budget["12"] = budget["total"] / 12;
     budget["4"] = budget["total"] / 4;
     console.log("Budget updated");
+    buildCompanyObject(economy, departmentAddress);
+    console.log(economy);
+    updateBudgetSpendingTable();
 }
 
-// Inefficient
-function updateBudgetSpendingTable(_contractAddress, _parentContractAddress) {
-    if (_parentContractAddress == undefined || document.getElementById(_parentContractAddress + ":" + _contractAddress) == undefined || transfersTo[_contractAddress] == undefined) {
-        return;
-    }
-    var value = 0;
-    for (var i = 0; i < transfersTo[_contractAddress].length; i++) {
-        if (transfersTo[_contractAddress][i].contract == _parentContractAddress) {
-            value += transfersTo[_contractAddress][i].amount;
-        }
-    }
-    value = getValueInCoins(value, BKK);
-    console.log(_parentContractAddress, _contractAddress, value);
-
-    var header = document.getElementById(_parentContractAddress + ":" + _contractAddress);
-    console.log(header);
-    if (departmentMappingAddressToString[_contractAddress] !== undefined) {
-        header.innerText = departmentMappingAddressToString[_contractAddress] + " : " + budget[_contractAddress] + ", used: " + value;
-    } else {
-        header.innerText = _contractAddress + " : " + budget[_contractAddress] + ", used: " + value;
-    }
+function updateBudgetSpendingTable() {
+    $('#table_ul').empty();
+    buildingBudgetSpendingTable(economy, document.getElementById("table_ul"));
+    $('.collapsible').collapsible();
 }
 
-function buildBudgetSpendingTable(_contractAddress, _amount, div, _parentContractAddress) {
-    var tempDepartment = departmentContract.at(_contractAddress);
-    var amount = getValueInCoins(parseFloat(_amount), BKK)
-    budget[_contractAddress] = amount;
-    var howMany = tempDepartment.getBudgetCount();
-
-    if (howMany <= 0) {
-        budget["total"] = budget["total"] + parseFloat(amount);
-        var li = document.createElement("li");
-
-        var header = document.createElement("div");
-        header.className = "collapsible-header";
-        header.id = _parentContractAddress + ":" + _contractAddress;
-
-        li.appendChild(header);
-
-        if (departmentMappingAddressToString[_contractAddress] !== undefined) {
-            header.innerText = departmentMappingAddressToString[_contractAddress] + " : " + parseFloat(amount);
+function transferToCompanyObject(_contractAddress, _to, _amount, _subRoot) {
+    if (_subRoot.id === _contractAddress) {
+        if (_subRoot.spendingMapping[_to] !== undefined) {
+            _subRoot.spendingMapping[_to] = _subRoot.spendingMapping[_to] + parseFloat(_amount);
         } else {
-            header.innerText = _contractAddress + " : " + parseFloat(amount);
+            _subRoot.spending.push(_to);
+            _subRoot.spendingMapping[_to] = parseFloat(_amount);
         }
-        div.appendChild(li);
-        updateBudgetSpendingTable(_contractAddress, _parentContractAddress);
+    } else {
+        for (var i = 0; i < _subRoot.childrens.length; i++) {
+            transferToCompanyObject(_contractAddress, _to, _amount, _subRoot.childrens[i]);
+        }
+    }
+}
+
+function budgetOutOfDepartment() {
+    var value = 0;
+
+    for (var i = 0; i < economy.budget.length; i++) {
+        value += parseFloat(economy.budgetMapping[economy.budget[i]]);
+    }
+
+    return getValueInCoins(value, BKK);
+}
+
+function budgetOutOfCompany(_subTree) {
+    var value = 0;
+
+    for (var i = 0; i < _subTree.childrens.length; i++) {
+        value += budgetOutOfCompany(_subTree.childrens[i]);
+    }
+
+    for (var i = 0; i < _subTree.budget.length; i++) {
+        var exists = false;
+        for (var j = 0; j < _subTree.childrens.length; j++) {
+            if (_subTree.budget[i] === _subTree.childrens[j]) {
+                exists = true;
+                break;
+            }
+        }
+        if (!exists) {
+            value += getValueInCoins(parseFloat(_subTree.budgetMapping[_subTree.budget[i]]), BKK);
+        }
+    }
+
+    return value;
+}
+
+function buildCompanyObject(_subRoot, _contractAddress) {
+    _subRoot.id = _contractAddress;
+    _subRoot.childrens = [];
+    _subRoot.budget = [];
+    _subRoot.spending = [];
+
+    _subRoot.spendingMapping = {};
+    _subRoot.budgetMapping = {};
+    try {
+        var subRootDepartment = departmentContract.at(_contractAddress);
+        departmentMappingAddressToString[_contractAddress] = subRootDepartment.name();
+        departmentMappingStringToAddress[subRootDepartment.name()] = _contractAddress;
+        for (var i = 0; i < subRootDepartment.getBudgetCount(); i++) {
+            var tempAddress = subRootDepartment.budgetList(i);
+            _subRoot.budget.push(tempAddress);
+            _subRoot.budgetMapping[tempAddress] = parseFloat(subRootDepartment.budgetMapping(tempAddress));
+            addDatapointSankeyBudget(_contractAddress, tempAddress, getValueInCoins(_subRoot.budgetMapping[tempAddress], BKK));
+        }
+        for (var i = 0; i < subRootDepartment.getChildDepartmentCount(); i++) {
+            var tempAddress = subRootDepartment.childDepartmentList(i);
+            var nextSubRoot = new Object();
+            _subRoot.childrens.push(nextSubRoot);
+            buildCompanyObject(nextSubRoot, tempAddress);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function getStringForHeader(_departmentAddress, _budget, _spending, _parentAddress) {
+    var output = _departmentAddress;
+    if (departmentMappingAddressToString[_departmentAddress] !== undefined) {
+        output = departmentMappingAddressToString[_departmentAddress];
+    }
+
+    if (_budget === undefined) {
+        output += "&nbsp;" + "<strong> budget </strong>: undefined ";
+    } else {
+        output += "&nbsp; " + "<strong> budget </strong>: " + getValueInCoins(parseFloat(_budget), BKK);
+    }
+
+    if (_spending === undefined) {
+        output += "&nbsp;" + "<strong> spending </strong>: none ";
+    } else {
+        output += "&nbsp;" + "<strong> spending </strong>: " + getValueInCoins(parseFloat(_spending), BKK);
+    }
+
+    if (_budget !== undefined && _spending !== undefined) {
+        if (_spending > _budget) {
+            output += '<i class="material-icons red-text">sentiment_very_dissatisfied</i>';
+        } else {
+            output += '<i class="material-icons green-text">sentiment_very_satisfied</i>';
+        }
+    }
+    output += "<i class='material-icons' onclick='showTransactionsInModal(\"" + _departmentAddress + "\",\"" + _parentAddress + "\");'>list</i>";
+
+    return output;
+}
+
+function buildingBudgetSpendingTable(_subRoot, _div) {
+    var tempUsed = {};
+    if (_subRoot.childrens.length <= 0) {
+        if (_subRoot.budget.length + _subRoot.spending.length <= 0) {
+            return;
+        }
+        var ul = document.createElement("ul");
+        ul.className = "collapsible";
+        ul.setAttribute("data-collapsible", "expandable");
+
+        for (var i = 0; i < _subRoot.budget.length; i++) {
+            var li = document.createElement("li");
+            var header = document.createElement("div");
+            header.className = "collapsible-header";
+
+            li.appendChild(header);
+
+            header.innerHTML = getStringForHeader(_subRoot.budget[i], _subRoot.budgetMapping[_subRoot.budget[i]], _subRoot.spendingMapping[_subRoot.budget[i]], _subRoot.id);
+
+            tempUsed[_subRoot.budget[i]] = true;
+            ul.appendChild(li);
+        }
+
+        for (var i = 0; i < _subRoot.spending.length; i++) {
+            if (tempUsed[_subRoot.spending[i]]) {
+                continue;
+            }
+            var li = document.createElement("li");
+            var header = document.createElement("div");
+            header.className = "collapsible-header";
+            header.innerHTML = getStringForHeader(_subRoot.spending[i], _subRoot.budgetMapping[_subRoot.spending[i]], _subRoot.spendingMapping[_subRoot.spending[i]], _subRoot.id);
+
+            ul.appendChild(li);
+        }
+        _div.appendChild(ul);
     } else {
         var ul = document.createElement("ul");
         ul.className = "collapsible";
         ul.setAttribute("data-collapsible", "expandable");
 
-        var li2, header, body;
-        if (_contractAddress !== departmentAddress) {
-            li2 = document.createElement("li");
+        for (var i = 0; i < _subRoot.childrens.length; i++) {
+            var nextSubRoot = _subRoot.childrens[i];
+            tempUsed[_subRoot.childrens[i].id] = true;
 
-            header = document.createElement("div");
+            var li = document.createElement("li");
+            var header = document.createElement("div");
             header.className = "collapsible-header";
-            header.id = _parentContractAddress + ":" + _contractAddress;
+            header.innerHTML = getStringForHeader(_subRoot.childrens[i].id, _subRoot.budgetMapping[_subRoot.childrens[i].id], _subRoot.spendingMapping[_subRoot.childrens[i].id], _subRoot.id);
 
-            body = document.createElement("div");
-            body.className = "collapsible-body";
-
-            if (departmentMappingAddressToString[_contractAddress] !== undefined) {
-                header.innerText = departmentMappingAddressToString[_contractAddress] + " : " + parseFloat(amount);
-            } else {
-                header.innerText = _contractAddress + " : " + parseFloat(amount);
+            if (_subRoot.childrens[i].spending.length + _subRoot.childrens[i].budget.length > 0) {
+                var bullet = document.createElement("i");
+                bullet.className = "material-icons";
+                bullet.innerHTML = "keyboard_arrow_down";
+                header.appendChild(bullet);
             }
 
-            li2.appendChild(header);
-            body.appendChild(ul);
-            li2.appendChild(body);
+            var body = document.createElement("div");
+            body.className = "collapsible-body";
+
+            buildingBudgetSpendingTable(nextSubRoot, body);
+            li.appendChild(header);
+            if (body.innerHTML.length > 0) {
+                li.appendChild(body);
+            }
+            ul.appendChild(li);
         }
 
-        for (var i = 0; i < howMany; i++) {
-            var tempAddress = tempDepartment.budgetList(i);
-            var budgetMappingValue = tempDepartment.budgetMapping(tempAddress);
-            addDatapointSankeyBudget(_contractAddress, tempAddress, getValueInCoins(parseFloat(budgetMappingValue), BKK));
-            buildBudgetSpendingTable(tempAddress, parseFloat(budgetMappingValue), ul, _contractAddress);
+        for (var i = 0; i < _subRoot.budget.length; i++) {
+            if (tempUsed[_subRoot.budget[i]]) {
+                continue;
+            } else {
+                tempUsed[_subRoot.budget[i]] = true;
+            }
+            var li = document.createElement("li");
+            var header = document.createElement("div");
+            header.className = "collapsible-header";
+            header.innerHTML = getStringForHeader(_subRoot.budget[i], _subRoot.budgetMapping[_subRoot.budget[i]], _subRoot.spendingMapping[_subRoot.budget[i]], _subRoot.id);
+
+            li.appendChild(header);
+            ul.appendChild(li);
         }
-        if (_contractAddress !== departmentAddress) {
-            div.appendChild(li2);
-            updateBudgetSpendingTable(_contractAddress, _parentContractAddress);
-        } else {
-            div.appendChild(ul);
+
+        for (var i = 0; i < _subRoot.spending.length; i++) {
+            if (tempUsed[_subRoot.spending[i]]) {
+                continue;
+            } else {
+                tempUsed[_subRoot.spending[i]] = true;
+            }
+            var li = document.createElement("li");
+            var header = document.createElement("div");
+            header.className = "collapsible-header";
+            header.innerHTML = getStringForHeader(_subRoot.spending[i], _subRoot.budgetMapping[_subRoot.spending[i]], _subRoot.spendingMapping[_subRoot.spending[i]], _subRoot.id);
+
+            li.appendChild(header);
+            ul.appendChild(li);
         }
+
+        _div.appendChild(ul);
     }
 }
 
@@ -458,7 +589,8 @@ function event_spend(event, old, intern) {
             addDatapointTransfer(_timeStamp, value);
         }
         addTransactionToTransactions(_contractAddress, _from, _to, _amount, _timeStamp, intern);
-        updateBudgetSpendingTable(_to, _contractAddress);
+        transferToCompanyObject(_contractAddress, _to, _amount, economy);
+        updateBudgetSpendingTable();
     }
 }
 
@@ -466,7 +598,7 @@ function setupListenerBudget(_contractAddress) {
     var events_budget = departmentContract.at(_contractAddress).BudgetChange({}, {fromBlock: 0});
     events_budget.watch(function (error, event) {
         if (!error) {
-            updateBudgetSpendingTable(_contractAddress);
+//            updateBudgetSpendingTable();
         }
     });
 }
@@ -496,15 +628,12 @@ function redraw() {
     sankeyChartSpending.draw(sankeyDataSpending, sankeyOptions);
     sankeyChartSpendingDepartment.draw(sankeyDataSpendingDepartment, sankeyOptions);
     sankeyChartBudget.draw(sankeyDataBudget, sankeyOptions);
+    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
     lineChartSpending.draw(lineDataSpendingAccumulative, lineOptions);
     lineChartSpendingDepartment.draw(lineDataSpendingDepartmentAccumulative, lineOptions);
 }
 
-/////////////
-// SANKEYS //
-/////////////
-
-function showTransactionsInModal(_toAddress) {
+function showTransactionsInModal(_toAddress, _fromAddress) {
     $("#modal_transaction_content").empty();
 
     var table = document.createElement("table");
@@ -530,31 +659,40 @@ function showTransactionsInModal(_toAddress) {
     trh.appendChild(thh4);
     thead.appendChild(trh);
     table.append(thead);
+    if (transfersTo[_toAddress] !== undefined) {
+        for (var i = 0; i < transfersTo[_toAddress].length; i++) {
+            if (_fromAddress !== undefined) {
+                if (_fromAddress !== transfersTo[_toAddress][i].contract) {
+                    continue;
+                }
+            }
+            var trow = document.createElement("tr");
+            var tdFrom = document.createElement("td");
+            var tdTime = document.createElement("td");
+            var tdAmount = document.createElement("td");
+            var tdCoin = document.createElement("td");
 
-    for (var i = 0; i < transfersTo[_toAddress].length; i++) {
-        var trow = document.createElement("tr");
-        var tdFrom = document.createElement("td");
-        var tdTime = document.createElement("td");
-        var tdAmount = document.createElement("td");
-        var tdCoin = document.createElement("td");
+            tdFrom.innerText = transfersTo[_toAddress][i].from;
+            tdTime.innerText = new Date(transfersTo[_toAddress][i].timestamp * 1000).toLocaleString();
+            tdAmount.innerText = getValueInCoins(transfersTo[_toAddress][i].amount, BKK);
+            tdCoin.innerText = transfersTo[_toAddress][i].intern ? "BKK" : "CDKK";
 
-        tdFrom.innerText = transfersTo[_toAddress][i].from;
-        tdTime.innerText = new Date(transfersTo[_toAddress][i].timestamp * 1000).toLocaleString();
-        tdAmount.innerText = getValueInCoins(transfersTo[_toAddress][i].amount, BKK);
-        tdCoin.innerText = transfersTo[_toAddress][i].intern ? "BKK" : "CDKK";
-
-        trow.appendChild(tdFrom);
-        trow.appendChild(tdTime);
-        trow.appendChild(tdAmount);
-        trow.appendChild(tdCoin);
-        tbody.appendChild(trow);
+            trow.appendChild(tdFrom);
+            trow.appendChild(tdTime);
+            trow.appendChild(tdAmount);
+            trow.appendChild(tdCoin);
+            tbody.appendChild(trow);
+        }
     }
 
     table.appendChild(tbody);
     document.getElementById("modal_transaction_content").appendChild(table);
-    //    $('#transaction_table').tablesorter({sortList: [[1, 0]]});
     $('#modal_for_transactions').modal('open');
 }
+
+/////////////
+// SANKEYS //
+/////////////
 
 function drawSankeyChartSpending() {
     sankeyDataSpending = new google.visualization.DataTable();
@@ -567,7 +705,9 @@ function drawSankeyChartSpending() {
         if (sankeyChartSpending.getSelection().length == 0) return;
         var row = sankeyChartSpending.getSelection()[0].row;
         var toAddress = sankeyDataSpending.getValue(row, 1);
-        showTransactionsInModal(toAddress);
+        var fromAddress = sankeyDataSpending.getValue(row, 0);
+        console.log(fromAddress);
+        showTransactionsInModal(toAddress, fromAddress);
     }
 
     google.visualization.events.addListener(sankeyChartSpending, 'select', handler);
@@ -624,14 +764,6 @@ function addDatapointSankeySpending(_from, _to, _value) {
 function addDatapointSankeySpendingDepartment(_from, _to, _value) {
     var howMany = sankeyDataSpendingDepartment.getNumberOfRows();
     var found = false;
-    /*
-        if (departmentMappingAddressToString[_from] !== undefined) {
-            _from = departmentMappingAddressToString[_from];
-        }
-        if (departmentMappingAddressToString[_to] !== undefined) {
-            _to = departmentMappingAddressToString[_to];
-        }
-    */
     for (var i = 0; i < howMany; i++) {
         if (sankeyDataSpendingDepartment.getValue(i, 0) === _from && sankeyDataSpendingDepartment.getValue(i, 1) === _to) {
             var temp = sankeyDataSpendingDepartment.getValue(i, 2);
@@ -659,15 +791,18 @@ function drawSankeyChartBudget() {
     $("#budget_sankey_div").hide();
 }
 
+function drawSankeyChartBudgetDepartment() {
+    sankeyDataBudgetDepartment = new google.visualization.DataTable();
+    sankeyDataBudgetDepartment.addColumn('string', 'From');
+    sankeyDataBudgetDepartment.addColumn('string', 'To');
+    sankeyDataBudgetDepartment.addColumn('number', 'Weight');
+
+    sankeyChartBudgetDepartment = new google.visualization.Sankey(document.getElementById('budget_department_sankey_chart_div'));
+    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
+    $("#budget_department_sankey_div").hide();
+}
+
 function addDatapointSankeyBudget(_from, _to, _value) {
-    console.log("Add data point to sankey budget");
-    /*
-    if (departmentMappingAddressToString[_from] !== undefined) {
-        _from = departmentMappingAddressToString[_from];
-    }
-    if (departmentMappingAddressToString[_to] !== undefined) {
-        _to = departmentMappingAddressToString[_to];
-    }*/
     var amount = sankeyDataBudget.getNumberOfRows();
     var found = false;
     for (var i = 0; i < amount; i++) {
@@ -680,8 +815,13 @@ function addDatapointSankeyBudget(_from, _to, _value) {
     if (!found) {
         sankeyDataBudget.addRow([_from, _to, _value]);
     }
+    if (_from == departmentAddress) {
+        sankeyDataBudgetDepartment.addRow([_from, _to, _value]);
+    }
     sankeyChartBudget.draw(sankeyDataBudget, sankeyOptions);
+    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
     $("#budget_sankey_div").show();
+    $("#budget_department_sankey_div").show();
 }
 
 ///////////
@@ -757,5 +897,4 @@ function removeEmployeeButton() {
 
 
 // https://github.com/highcharts/highcharts/issues/7295
-
 // https://stackoverflow.com/questions/33492736/show-text-on-google-chart-sankey-diagram
