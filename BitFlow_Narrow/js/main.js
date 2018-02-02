@@ -636,6 +636,11 @@ function redraw() {
 function showTransactionsInModal(_toAddress, _fromAddress) {
     $("#modal_transaction_content").empty();
 
+    var header = document.createElement("p");
+    header.className = "flow-text";
+    header.innerHTML = "Transactions from " + _fromAddress + " to " + _toAddress;
+    document.getElementById("modal_transaction_content").appendChild(header);
+
     var table = document.createElement("table");
     table.className = "centered responsive-table"
     table.id = "transaction_table";
