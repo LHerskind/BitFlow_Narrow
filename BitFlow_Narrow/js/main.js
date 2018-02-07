@@ -1,4 +1,5 @@
-// TODO: Der er problemer med at ændre på budgettet, det ligner ikke at de bliver ordentligt lagt ind. Derudover så ligner det at vi kun regner CDKK som ud, det kan jo godt være BKK ud, bare til et andet firma, så det skal lige med
+// TODO: Der er problemer med at ændre på budgettet, det ligner ikke at de bliver ordentligt lagt ind.
+// Derudover så ligner det at vi kun regner CDKK som ud, det kan jo godt være BKK ud, bare til et andet firma, så det skal lige med
 
 
 // Burde muligvis være med, men vi vil gerne være sikre på at metamask ikke fucker
@@ -355,7 +356,7 @@ function budgetOutOfCompany(_subTree) {
     for (var i = 0; i < _subTree.budget.length; i++) {
         var exists = false;
         for (var j = 0; j < _subTree.childrens.length; j++) {
-            if (_subTree.budget[i] === _subTree.childrens[j]) {
+            if (_subTree.budget[i] == _subTree.childrens[j].id) {
                 exists = true;
                 break;
             }
