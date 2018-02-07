@@ -16,7 +16,7 @@ var mintabletokenContract, treasuryContract, departmentContract;
 var BKK, CDKK, treasury, department;
 var address;
 
-var departmentAddress = "0x7ec1548be550fc10232dfa7082ced95225c68586";
+var departmentAddress = "0x71933990016281f2901f65dc2021b7717a55c92e";
 //var departmentAddress = "0xd0f52f0cf9e2191cb1399c91949c3199f7eeff18";
 var simpleDepartmentCreatorAddress = "0xff2d7dc1576d4ce1613d1b2a69b2f3bc9c74a29a";
 
@@ -47,7 +47,7 @@ var sankeyOptions = {
         trigger: 'none'
     },
     sankey: {
-        iterations: 4,
+//        iterations: 4,
         node: {
             colorMode: 'unique',
             label: {
@@ -273,7 +273,7 @@ function addDatapointTransferDepartment(date, value) {
         tempDate = lineDataSpendingDepartment.getValue(i, 0);
         tempValue = lineDataSpendingDepartment.getValue(i, 1);
         if (index === -1) {
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budget["12"]]);
+            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budgetOutOfDepartment()]);
             index++;
         } else if (tempDate.getHours() === lineDataSpendingDepartmentAccumulative.getValue(index, 0).getHours()) {
             var temp2 = lineDataSpendingDepartmentAccumulative.getValue(index, 1);
