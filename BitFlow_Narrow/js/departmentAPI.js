@@ -4,7 +4,9 @@ function getGasPrice() {
 
 function submitter(error, result) {
     if (!error) {
-        alert("Transaction submitted");
+        if (!simulation) {
+            alert("Transaction submitted");
+        }
         console.log(result);
     } else {
         console.log(error);
@@ -120,12 +122,12 @@ function removeEmployee(_employee) {
     }, submitter);
 }
 
-function changeBudget(_to, _amount) {
+function changeBudget(_to, _date, _amount) {
     if (!provider.isAddress(_to)) {
         console.log("Ugyldig addresse");
         return;
     }
-    department.changeBudget.sendTransaction(_to, _amount, {
+    department.changeBudget.sendTransaction(_to, _date, _amount, {
         from: address,
         gas: 400000
 //        gasPrice: getGasPrice()
@@ -133,11 +135,8 @@ function changeBudget(_to, _amount) {
 }
 
 function transferBKK(_to, _amount) {
-    console.log("TransferBKK");
-    var amountInBKK = Math.floor(_amount * 100);
-
     if (provider.isAddress(_to)) {
-        department.transferFundsIntern.sendTransaction(_to, amountInBKK, {
+        department.transferFundsIntern.sendTransaction(_to, _amount, {
             from: address,
             gas: 200000,
             gasPrice: provider.toWei(2, "gWei")
@@ -148,10 +147,20 @@ function transferBKK(_to, _amount) {
 }
 
 function transferCDKK(_to, _amount) {
-    var amountInCDKK = Math.floor(_amount * 100);
-
     if (provider.isAddress(_to)) {
-        department.transferFundsOutside.sendTransaction(_to, amountInCDKK, {
+        department.transferFundsOutside.sendTransaction(_to, _amount, {
+            from: address,
+            gas: 200000,
+            gasPrice: getGasPrice()
+        }, submitter);
+    } else {
+        console.log("Addressen er ikke gyldig");
+    }
+}
+
+function simulateTransferCDKK(_to, _time, _amount) {
+    if (provider.isAddress(_to)) {
+        department.simulateTransferFundsOutside.sendTransaction(_to, _time, _amount, {
             from: address,
             gas: 200000,
             gasPrice: getGasPrice()

@@ -12,68 +12,41 @@ if (typeof web3 !== 'undefined' && useMetaMask) {
     provider = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
 
+var simulation = false;
+
 var mintabletokenContract, treasuryContract, departmentContract;
 
 var BKK, CDKK, treasury, department;
 var address;
 
-var departmentAddress = "0x71933990016281f2901f65dc2021b7717a55c92e";
-//var departmentAddress = "0xd0f52f0cf9e2191cb1399c91949c3199f7eeff18";
+var departmentAddress = "0x18e6831e484eb50a91158ae8dc3ff05a95de892b"; // "0x1f1f3066bf200d9a1b5733d0487a6399326607f2";
 var simpleDepartmentCreatorAddress = "0xff2d7dc1576d4ce1613d1b2a69b2f3bc9c74a29a";
 
 var departmentMappingAddressToString = {};
 var departmentMappingStringToAddress = {};
-var transfersFrom = {};
 var transfersTo = {};
-var budget = {};
+var transfersDate = {};
+var datesTransferred = [];
 
 var economy = new Object();
 
-var lineDataSpending, lineDataSpendingAccumulative, lineChartSpending;
-var lineDataSpendingDepartment, lineDataSpendingDepartmentAccumulative, lineChartSpendingDepartment;
-var sankeyDataBudget, sankeyChartBudget;
-var sankeyDataBudgetDepartment, sankeyChartBudgetDepartment;
-var sankeyDataSpending, sankeyChartSpending;
-var sankeyDataSpendingDepartment, sankeyChartSpendingDepartment;
+var slider;
 
-var lineOptions = {
-    colors: ['#097138', '#a52714'],
-    animation: {
-        duration: 600
-    }
-};
-var sankeyOptions = {
-    height: 300,
-    tooltip: {
-        trigger: 'none'
-    },
-    sankey: {
-//        iterations: 4,
-        node: {
-            colorMode: 'unique',
-            label: {
-                fontName: 'Times-Roman',
-                fontSize: 14,
-                bold: true
-            }
-        },
-        link: {
-            interactivity: true,
-            colorMode: 'target'
-        }
-    }
-};
+var companyData, companyChart, companyChartOptions;
+var departmentData, departmentChart, departmentChartOptions;
 
 $(document).ready(function () {
     var tempAddress = getAllUrlParams().address;
     if (tempAddress !== undefined) {
         departmentAddress = tempAddress;
     }
-
-    $('ul.tabs').tabs({onShow: redraw});
+    $('ul.tabs').tabs({onShow: redrawChart});
     $('.modal').modal();
-    google.charts.load('current', {packages: ['corechart', 'sankey']});
-    google.charts.setOnLoadCallback(drawCharts);
+
+    setupSlider();
+    setupDatePicker();
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(googlePackagesLoaded);
 
     mintabletokenContract = provider.eth.contract(mintableTokenAbi);
     treasuryContract = provider.eth.contract(treasuryAbi);
@@ -88,10 +61,45 @@ $(document).ready(function () {
         provider.personal.unlockAccount(address, "SomePass", 0);
     }
 
-    window.onresize = redraw;
-
+    window.onresize = redrawChart;
     updateAll();
+
+    if (simulation) {
+        generateBudget(new Date(2018, 0, 1), new Date(2018, 0, 365), 500, 400, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
+        generateSpending(new Date(2018, 0, 1), new Date(2018, 0, 365), 400, 500, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
+    }
 });
+
+function setupDatePicker() {
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 5, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+}
+
+function setupSlider() {
+    var beginMoment = moment("2018-01-01");
+    var endMoment = moment((new Date(Date.now()).getFullYear() + 1) + "-01-01");
+    slider = $("#dates_slider").ionRangeSlider({
+        hide_min_max: false,
+        keyboard: true,
+        min: +moment(beginMoment).format("X"),
+        max: +moment(endMoment).format("X"),
+        from: +moment(beginMoment).format("X"),
+        to: +moment(endMoment).format("X"),
+        type: 'double',
+        grid: true,
+        prettify: function (num) {
+            return moment(num, "X").format("MMM Do YYYY");
+        },
+        onFinish: function (data) {
+            precisionChange();
+        }
+    });
+}
 
 function updateAll() {
     updateMyUser();
@@ -187,106 +195,18 @@ function getValueInCoins(amount, coin) {
     return (amount / Math.pow(10, 2));
 }
 
-function getDateFromTime(value) {
-    return new Date(1000 * value).toLocaleString();
-}
+function googlePackagesLoaded() {
+    buildCompanyObject(economy, departmentAddress);
+    console.log(economy);
 
-function drawCharts() {
     updateDepartmentMapping(department.address);
-    drawSankeyChartBudget();
-    drawSankeyChartBudgetDepartment();
-    drawLineChart();
-    drawLineChartDepartment();
-    drawSankeyChartSpending();
-    drawSankeyChartSpendingDepartment();
+    updateBudgetSpendingTable();
+
+    initDepartmentChart();
+    initCompanyChart();
+    precisionChange();
+
     setupData();
-    updateBudget();
-}
-
-function drawLineChart() {
-    lineDataSpending = new google.visualization.DataTable();
-    lineDataSpending.addColumn('datetime', 'Time');
-    lineDataSpending.addColumn('number', 'Forbrug');
-    lineDataSpending.addColumn('number', 'Budget');
-    lineDataSpendingAccumulative = new google.visualization.DataTable();
-    lineDataSpendingAccumulative.addColumn('datetime', 'Time');
-    lineDataSpendingAccumulative.addColumn('number', 'Forbrug');
-    lineDataSpendingAccumulative.addColumn('number', 'Budget');
-    lineChartSpending = new google.visualization.LineChart(document.getElementById('line_chart_div'));
-    lineChartSpending.draw(lineDataSpendingAccumulative, lineOptions);
-    $("#total_spending_div").hide();
-}
-
-function drawLineChartDepartment() {
-    lineDataSpendingDepartment = new google.visualization.DataTable();
-    lineDataSpendingDepartment.addColumn('datetime', 'Time');
-    lineDataSpendingDepartment.addColumn('number', 'Forbrug');
-    lineDataSpendingDepartment.addColumn('number', 'Budget');
-    lineDataSpendingDepartmentAccumulative = new google.visualization.DataTable();
-    lineDataSpendingDepartmentAccumulative.addColumn('datetime', 'Time');
-    lineDataSpendingDepartmentAccumulative.addColumn('number', 'Forbrug');
-    lineDataSpendingDepartmentAccumulative.addColumn('number', 'Budget');
-    lineChartSpendingDepartment = new google.visualization.LineChart(document.getElementById('department_line_chart_div'));
-    lineChartSpendingDepartment.draw(lineDataSpendingDepartmentAccumulative, lineOptions);
-    $("#spending_department_div").hide();
-}
-
-// Ineffektiv af helvede til, nu prøver vi bare lige at få noget vist ordentligt.
-function addDatapointTransfer(date, value) {
-    var tempDate = new Date(date * 1000);
-    var tempValue = value;
-    lineDataSpending.addRow([tempDate, value, budgetOutOfCompany(economy)]);
-    lineDataSpending.sort([{column: 0}]);
-    lineDataSpendingAccumulative.removeRows(0, lineDataSpendingAccumulative.getNumberOfRows());
-
-    var index = -1;
-    for (var i = 0; i < lineDataSpending.getNumberOfRows(); i++) {
-        tempDate = lineDataSpending.getValue(i, 0);
-        tempValue = lineDataSpending.getValue(i, 1);
-        if (index === -1) {
-            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budgetOutOfCompany(economy)]);
-            index++;
-        } else if (tempDate.getHours() === lineDataSpendingAccumulative.getValue(index, 0).getHours()) {
-            var temp2 = lineDataSpendingAccumulative.getValue(index, 1);
-            lineDataSpendingAccumulative.addRow([tempDate, temp2 + tempValue, budgetOutOfCompany(economy)]);
-            index++;
-        } else {
-            lineDataSpendingAccumulative.addRow([tempDate, tempValue, budgetOutOfCompany(economy)]);
-            index++;
-        }
-    }
-    lineChartSpending.draw(lineDataSpendingAccumulative, lineOptions);
-    $("#total_spending_div").show();
-}
-
-// Ineffektiv af helvede til, nu prøver vi bare lige at få noget vist ordentligt.
-function addDatapointTransferDepartment(date, value) {
-
-    var tempDate = new Date(date * 1000);
-    var tempValue = value;
-    lineDataSpendingDepartment.addRow([tempDate, value, budgetOutOfDepartment()]);
-    lineDataSpendingDepartment.sort([{column: 0}]);
-
-    lineDataSpendingDepartmentAccumulative.removeRows(0, lineDataSpendingDepartmentAccumulative.getNumberOfRows());
-
-    var index = -1;
-    for (var i = 0; i < lineDataSpendingDepartment.getNumberOfRows(); i++) {
-        tempDate = lineDataSpendingDepartment.getValue(i, 0);
-        tempValue = lineDataSpendingDepartment.getValue(i, 1);
-        if (index === -1) {
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budgetOutOfDepartment()]);
-            index++;
-        } else if (tempDate.getHours() === lineDataSpendingDepartmentAccumulative.getValue(index, 0).getHours()) {
-            var temp2 = lineDataSpendingDepartmentAccumulative.getValue(index, 1);
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, temp2 + tempValue, budgetOutOfDepartment()]);
-            index++;
-        } else {
-            lineDataSpendingDepartmentAccumulative.addRow([tempDate, tempValue, budgetOutOfDepartment()]);
-            index++;
-        }
-    }
-    lineChartSpendingDepartment.draw(lineDataSpendingDepartmentAccumulative, lineOptions);
-    $("#spending_department_div").show();
 }
 
 function setupData() {
@@ -305,20 +225,137 @@ function updateDepartmentMapping(_contractAddress) {
     }
 }
 
-function updateBudget() {
-    budget["total"] = 0;
-    budget["12"] = budget["total"] / 12;
-    budget["4"] = budget["total"] / 4;
-    console.log("Budget updated");
-    buildCompanyObject(economy, departmentAddress);
-    console.log(economy);
-    updateBudgetSpendingTable();
-}
 
 function updateBudgetSpendingTable() {
     $('#table_ul').empty();
     buildingBudgetSpendingTable(economy, document.getElementById("table_ul"));
     $('.collapsible').collapsible();
+}
+
+// Returning the budget inclusive start date, exclusive end date
+function getBudgetOutOfDepartment(_start, _end, _subtree) {
+    if (_subtree === undefined) {
+        _subtree = economy;
+    }
+    var value = 0;
+    var startDay = getTimeFromValue(_start.getTime());
+    var endDay = getTimeFromValue(_end.getTime());
+
+    for (var i = 0; i < _subtree.budget.length; i++) {
+        var tempAddress = _subtree.budget[i];
+        for (var j = 0; j < _subtree.budgetMapping[tempAddress].dates.length; j++) {
+            var date = _subtree.budgetMapping[tempAddress].dates[j];
+            if (startDay <= date && date < endDay) {
+                value += parseInt(_subtree.budgetMapping[tempAddress].amounts[date]) / 100;
+            } else {
+                // Sort dates when creating the object, then we can break when we miss.
+            }
+        }
+    }
+    return value;
+}
+
+function getSpendingOutOfDepartment(_start, _end, _subtree) {
+    if (_start === undefined || _end === undefined) {
+        return 0;
+    }
+    if (_subtree === undefined) {
+        _subtree = economy;
+    }
+
+    var value = 0;
+    var startDay = getTimeFromValue(_start.getTime());
+    var endDay = getTimeFromValue(_end.getTime());
+
+    for (var i = 0; i < datesTransferred.length; i++) {
+        var tempDay = datesTransferred[i];
+        if (startDay <= tempDay && tempDay < endDay) {
+            for (var j = 0; j < transfersDate[tempDay].length; j++) {
+//                console.log(j, tempDay, transfersDate[tempDay][j]);
+                if (transfersDate[tempDay][j].contract === _subtree.id) {
+                    value += parseInt(transfersDate[tempDay][j].amount) / 100;
+                }
+            }
+        }
+    }
+    return value;
+}
+
+function getBudgetOutOfCompany(_start, _end, _subtree) {
+    if (_subtree === undefined) {
+        _subtree = economy;
+    }
+
+    var value = 0;
+    var startDay = getTimeFromValue(_start.getTime());
+    var endDay = getTimeFromValue(_end.getTime());
+
+    for (var i = 0; i < _subtree.budget.length; i++) {
+        var tempAddress = _subtree.budget[i];
+        var isChild = false;
+        for (var j = 0; j < _subtree.childrens.length; j++) {
+            if (_subtree.childrens[j].id === tempAddress) {
+                isChild = true;
+                break;
+            }
+        }
+        if (isChild) {
+            continue;
+        }
+
+        for (var j = 0; j < _subtree.budgetMapping[tempAddress].dates.length; j++) {
+            var date = _subtree.budgetMapping[tempAddress].dates[j];
+            if (startDay <= date && date < endDay) {
+                value += parseInt(_subtree.budgetMapping[tempAddress].amounts[date]) / 100;
+            } else {
+                // Sort dates when creating the object, then we can break when we miss.
+            }
+        }
+    }
+
+    for (var i = 0; i < _subtree.childrens.length; i++) {
+        value += getBudgetOutOfCompany(_start, _end, _subtree.childrens[i]);
+    }
+
+    return value;
+}
+
+function getSpendingOutOfCompany(_start, _end, _subtree) {
+    if (_subtree === undefined) {
+        _subtree = economy;
+    }
+
+    var value = 0;
+    var startDay = getTimeFromValue(_start.getTime());
+    var endDay = getTimeFromValue(_end.getTime());
+
+    for (var i = 0; i < _subtree.spending.length; i++) {
+        var tempAddress = _subtree.spending[i];
+        var isChild = false;
+        for (var j = 0; j < _subtree.childrens.length; j++) {
+            if (_subtree.childrens[j].id === tempAddress) {
+                isChild = true;
+                break;
+            }
+        }
+        if (isChild) {
+            continue;
+        }
+        for (var j = 0; j < transfersTo[tempAddress].length; j++) {
+            if (transfersTo[tempAddress][j].contract === _subtree.id) {
+                var date = getTimeFromEventValue(transfersTo[tempAddress][j].timestamp);
+                if (startDay <= date && date < endDay) {
+                    value += parseInt(transfersTo[tempAddress][j].amount) / 100;
+                }
+            }
+        }
+    }
+
+    for (var i = 0; i < _subtree.childrens.length; i++) {
+        value += getSpendingOutOfCompany(_start, _end, _subtree.childrens[i]);
+    }
+
+    return value;
 }
 
 function transferToCompanyObject(_contractAddress, _to, _amount, _subRoot) {
@@ -336,45 +373,11 @@ function transferToCompanyObject(_contractAddress, _to, _amount, _subRoot) {
     }
 }
 
-function budgetOutOfDepartment() {
-    var value = 0;
-
-    for (var i = 0; i < economy.budget.length; i++) {
-        value += parseFloat(economy.budgetMapping[economy.budget[i]]);
-    }
-
-    return getValueInCoins(value, BKK);
-}
-
-function budgetOutOfCompany(_subTree) {
-    var value = 0;
-
-    for (var i = 0; i < _subTree.childrens.length; i++) {
-        value += budgetOutOfCompany(_subTree.childrens[i]);
-    }
-
-    for (var i = 0; i < _subTree.budget.length; i++) {
-        var exists = false;
-        for (var j = 0; j < _subTree.childrens.length; j++) {
-            if (_subTree.budget[i] == _subTree.childrens[j].id) {
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            value += getValueInCoins(parseFloat(_subTree.budgetMapping[_subTree.budget[i]]), BKK);
-        }
-    }
-
-    return value;
-}
-
 function buildCompanyObject(_subRoot, _contractAddress) {
     _subRoot.id = _contractAddress;
     _subRoot.childrens = [];
     _subRoot.budget = [];
     _subRoot.spending = [];
-
     _subRoot.spendingMapping = {};
     _subRoot.budgetMapping = {};
     try {
@@ -384,8 +387,15 @@ function buildCompanyObject(_subRoot, _contractAddress) {
         for (var i = 0; i < subRootDepartment.getBudgetCount(); i++) {
             var tempAddress = subRootDepartment.budgetList(i);
             _subRoot.budget.push(tempAddress);
-            _subRoot.budgetMapping[tempAddress] = parseFloat(subRootDepartment.budgetMapping(tempAddress));
-            addDatapointSankeyBudget(_contractAddress, tempAddress, getValueInCoins(_subRoot.budgetMapping[tempAddress], BKK));
+            _subRoot.budgetMapping[tempAddress] = new Object();
+            _subRoot.budgetMapping[tempAddress].dates = [];
+            _subRoot.budgetMapping[tempAddress].amounts = {};
+
+            for (var j = 0; j < subRootDepartment.getBudgetElementDatesLength(tempAddress); j++) {
+                var date = subRootDepartment.getBudgetElementDate(tempAddress, j);
+                _subRoot.budgetMapping[tempAddress].dates.push(date);
+                _subRoot.budgetMapping[tempAddress].amounts[date] = subRootDepartment.getBudgetElementDateValue(tempAddress, date);
+            }
         }
         for (var i = 0; i < subRootDepartment.getChildDepartmentCount(); i++) {
             var tempAddress = subRootDepartment.childDepartmentList(i);
@@ -407,7 +417,11 @@ function getStringForHeader(_departmentAddress, _budget, _spending, _parentAddre
     if (_budget === undefined) {
         output += "&nbsp;" + "<strong> budget </strong>: undefined ";
     } else {
-        output += "&nbsp; " + "<strong> budget </strong>: " + getValueInCoins(parseFloat(_budget), BKK);
+        var budgetAmount = 0;
+        for (var i = 0; i < _budget.dates.length; i++) {
+            budgetAmount += parseFloat(_budget.amounts[_budget.dates[i]]);
+        }
+        output += "&nbsp; " + "<strong> budget </strong>: " + getValueInCoins(budgetAmount, BKK);
     }
 
     if (_spending === undefined) {
@@ -579,16 +593,6 @@ function event_spend(event, old, intern) {
     }
 
     function subfunction(_from, _to, _amount, _timeStamp, _isIntern, _contractAddress) {
-        var coinType = _isIntern ? BKK : CDKK;
-        var value = getValueInCoins(_amount, coinType);
-        addDatapointSankeySpending(_contractAddress, _to, value);
-        if (_contractAddress === departmentAddress) {
-            addDatapointSankeySpendingDepartment(_contractAddress, _to, value);
-            addDatapointTransferDepartment(_timeStamp, value);
-        }
-        if (!_isIntern) {
-            addDatapointTransfer(_timeStamp, value);
-        }
         addTransactionToTransactions(_contractAddress, _from, _to, _amount, _timeStamp, intern);
         transferToCompanyObject(_contractAddress, _to, _amount, economy);
         updateBudgetSpendingTable();
@@ -605,12 +609,13 @@ function setupListenerBudget(_contractAddress) {
 }
 
 function addTransactionToTransactions(_contractAddress, _from, _to, _amount, _timestamp, intern) {
-    if (transfersFrom[_contractAddress] === undefined) {
-        transfersFrom[_contractAddress] = [];
-    }
-
+    var time = getTimeFromValue(_timestamp.c[0] * 1000);
     if (transfersTo[_to] === undefined) {
         transfersTo[_to] = [];
+    }
+    if (transfersDate[time] === undefined) {
+        transfersDate[time] = [];
+        datesTransferred.push(time);
     }
 
     var object = new Object();
@@ -621,17 +626,8 @@ function addTransactionToTransactions(_contractAddress, _from, _to, _amount, _ti
     object.timestamp = _timestamp.c[0];
     object.intern = intern;
 
-    transfersFrom[_contractAddress].push(object);
     transfersTo[_to].push(object);
-}
-
-function redraw() {
-    sankeyChartSpending.draw(sankeyDataSpending, sankeyOptions);
-    sankeyChartSpendingDepartment.draw(sankeyDataSpendingDepartment, sankeyOptions);
-    sankeyChartBudget.draw(sankeyDataBudget, sankeyOptions);
-    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
-    lineChartSpending.draw(lineDataSpendingAccumulative, lineOptions);
-    lineChartSpendingDepartment.draw(lineDataSpendingDepartmentAccumulative, lineOptions);
+    transfersDate[time].push(object);
 }
 
 function showTransactionsInModal(_toAddress, _fromAddress) {
@@ -696,140 +692,6 @@ function showTransactionsInModal(_toAddress, _fromAddress) {
     $('#modal_for_transactions').modal('open');
 }
 
-/////////////
-// SANKEYS //
-/////////////
-
-function drawSankeyChartSpending() {
-    sankeyDataSpending = new google.visualization.DataTable();
-    sankeyDataSpending.addColumn('string', 'From');
-    sankeyDataSpending.addColumn('string', 'To');
-    sankeyDataSpending.addColumn('number', 'Usage');
-    sankeyChartSpending = new google.visualization.Sankey(document.getElementById('spending_sankey_chart_div'));
-
-    function handler() {
-        if (sankeyChartSpending.getSelection().length == 0) return;
-        var row = sankeyChartSpending.getSelection()[0].row;
-        var toAddress = sankeyDataSpending.getValue(row, 1);
-        var fromAddress = sankeyDataSpending.getValue(row, 0);
-        console.log(fromAddress);
-        showTransactionsInModal(toAddress, fromAddress);
-    }
-
-    google.visualization.events.addListener(sankeyChartSpending, 'select', handler);
-    sankeyChartSpending.draw(sankeyDataSpending, sankeyOptions);
-    $("#spending_sankey_div").hide();
-}
-
-function drawSankeyChartSpendingDepartment() {
-    sankeyDataSpendingDepartment = new google.visualization.DataTable();
-    sankeyDataSpendingDepartment.addColumn('string', 'From');
-    sankeyDataSpendingDepartment.addColumn('string', 'To');
-    sankeyDataSpendingDepartment.addColumn('number', 'Usage');
-    sankeyChartSpendingDepartment = new google.visualization.Sankey(document.getElementById('spending_department_sankey_chart_div'));
-
-    function handler() {
-        if (sankeyChartSpending.getSelection().length == 0) return;
-        var row = sankeyChartSpending.getSelection()[0].row;
-        var toAddress = sankeyDataSpending.getValue(row, 1);
-        showTransactionsInModal(toAddress);
-    }
-
-    google.visualization.events.addListener(sankeyChartSpendingDepartment, 'select', handler);
-    sankeyChartSpendingDepartment.draw(sankeyDataSpendingDepartment, sankeyOptions);
-    $("#spending_department_sankey_div").hide();
-}
-
-function addDatapointSankeySpending(_from, _to, _value) {
-    var howMany = sankeyDataSpending.getNumberOfRows();
-    var found = false;
-    /*
-        if (departmentMappingAddressToString[_from] !== undefined) {
-            _from = departmentMappingAddressToString[_from];
-        }
-        if (departmentMappingAddressToString[_to] !== undefined) {
-            _to = departmentMappingAddressToString[_to];
-        }
-    */
-    for (var i = 0; i < howMany; i++) {
-        if (sankeyDataSpending.getValue(i, 0) === _from && sankeyDataSpending.getValue(i, 1) === _to) {
-            var temp = sankeyDataSpending.getValue(i, 2);
-            sankeyDataSpending.setValue(i, 2, temp + _value);
-            found = true;
-            break;
-        }
-    }
-
-    if (!found) {
-        sankeyDataSpending.addRow(["" + _from, "" + _to, _value]);
-    }
-    sankeyChartSpending.draw(sankeyDataSpending, sankeyOptions);
-    $("#spending_sankey_div").show();
-}
-
-function addDatapointSankeySpendingDepartment(_from, _to, _value) {
-    var howMany = sankeyDataSpendingDepartment.getNumberOfRows();
-    var found = false;
-    for (var i = 0; i < howMany; i++) {
-        if (sankeyDataSpendingDepartment.getValue(i, 0) === _from && sankeyDataSpendingDepartment.getValue(i, 1) === _to) {
-            var temp = sankeyDataSpendingDepartment.getValue(i, 2);
-            sankeyDataSpendingDepartment.setValue(i, 2, temp + _value);
-            found = true;
-            break;
-        }
-    }
-
-    if (!found) {
-        sankeyDataSpendingDepartment.addRow(["" + _from, "" + _to, _value]);
-    }
-    sankeyChartSpendingDepartment.draw(sankeyDataSpendingDepartment, sankeyOptions);
-    $("#spending_department_sankey_div").show();
-}
-
-function drawSankeyChartBudget() {
-    sankeyDataBudget = new google.visualization.DataTable();
-    sankeyDataBudget.addColumn('string', 'From');
-    sankeyDataBudget.addColumn('string', 'To');
-    sankeyDataBudget.addColumn('number', 'Weight');
-
-    sankeyChartBudget = new google.visualization.Sankey(document.getElementById('budget_sankey_chart_div'));
-    sankeyChartBudget.draw(sankeyDataBudget, sankeyOptions);
-    $("#budget_sankey_div").hide();
-}
-
-function drawSankeyChartBudgetDepartment() {
-    sankeyDataBudgetDepartment = new google.visualization.DataTable();
-    sankeyDataBudgetDepartment.addColumn('string', 'From');
-    sankeyDataBudgetDepartment.addColumn('string', 'To');
-    sankeyDataBudgetDepartment.addColumn('number', 'Weight');
-
-    sankeyChartBudgetDepartment = new google.visualization.Sankey(document.getElementById('budget_department_sankey_chart_div'));
-    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
-    $("#budget_department_sankey_div").hide();
-}
-
-function addDatapointSankeyBudget(_from, _to, _value) {
-    var amount = sankeyDataBudget.getNumberOfRows();
-    var found = false;
-    for (var i = 0; i < amount; i++) {
-        if (sankeyDataBudget.getValue(i, 0) == _from && sankeyDataBudget.getValue(i, 1) == _to) {
-            sankeyDataBudget.setValue(i, 2, _value);
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        sankeyDataBudget.addRow([_from, _to, _value]);
-    }
-    if (_from == departmentAddress) {
-        sankeyDataBudgetDepartment.addRow([_from, _to, _value]);
-    }
-    sankeyChartBudget.draw(sankeyDataBudget, sankeyOptions);
-    sankeyChartBudgetDepartment.draw(sankeyDataBudgetDepartment, sankeyOptions);
-    $("#budget_sankey_div").show();
-    $("#budget_department_sankey_div").show();
-}
-
 ///////////
 //Actions//
 ///////////
@@ -837,20 +699,23 @@ function addDatapointSankeyBudget(_from, _to, _value) {
 function transferBKKButton() {
     var to = document.getElementById("send_bkk_to").value;
     var amount = document.getElementById("amount_bkk_to_send").value;
-    transferBKK(to, amount);
+    var amountInBKK = Math.floor(amount * 100);
+    transferBKK(to, amountInBKK);
 }
 
 function transferCDKKButton() {
     var to = document.getElementById("send_cdkk_to").value;
     var amount = document.getElementById("amount_cdkk_to_send").value;
-    transferCDKK(to, amount);
+    var amountInCDKK = Math.floor(amount * 100);
+    transferCDKK(to, amountInCDKK);
 }
 
 function changeBudgetButton() {
     var to = document.getElementById("address_to_budget").value;
     var amount = document.getElementById("amount_to_budget").value;
     var amountInToken = amount * Math.pow(10, 2);
-    changeBudget(to, amountInToken);
+    var date = new Date(document.getElementById("date_to_budget").value);
+    changeBudget(to, date.getTime(), amountInToken);
 }
 
 function setSupervisorButton() {

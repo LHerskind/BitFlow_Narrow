@@ -418,11 +418,22 @@ var departmentAbi = [{
     "type": "function"
 }, {
     "constant": false,
-    "inputs": [{"name": "_to", "type": "address"}, {"name": "_amount", "type": "uint256"}],
-    "name": "changeBudget",
+    "inputs": [{"name": "_to", "type": "address"}, {"name": "_time", "type": "uint256"}, {
+        "name": "_amount",
+        "type": "uint256"
+    }],
+    "name": "simulateTransferFundsOutside",
     "outputs": [{"name": "", "type": "bool"}],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "constant": true,
+    "inputs": [{"name": "_to", "type": "address"}, {"name": "_index", "type": "uint256"}],
+    "name": "getBudgetElementDate",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
 }, {
     "constant": false,
@@ -458,8 +469,24 @@ var departmentAbi = [{
     "type": "function"
 }, {
     "constant": true,
+    "inputs": [{"name": "_to", "type": "address"}],
+    "name": "getBudgetElementDatesLength",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "constant": true,
     "inputs": [],
     "name": "getBudgetCount",
+    "outputs": [{"name": "", "type": "uint256"}],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "constant": true,
+    "inputs": [{"name": "_to", "type": "address"}, {"name": "_time", "type": "uint256"}],
+    "name": "getBudgetElementDateValue",
     "outputs": [{"name": "", "type": "uint256"}],
     "payable": false,
     "stateMutability": "view",
@@ -505,12 +532,15 @@ var departmentAbi = [{
     "stateMutability": "nonpayable",
     "type": "function"
 }, {
-    "constant": true,
-    "inputs": [{"name": "", "type": "address"}],
-    "name": "budgetMapping",
-    "outputs": [{"name": "", "type": "uint256"}],
+    "constant": false,
+    "inputs": [{"name": "_to", "type": "address"}, {"name": "_time", "type": "uint256"}, {
+        "name": "_amount",
+        "type": "uint256"
+    }],
+    "name": "changeBudget",
+    "outputs": [{"name": "", "type": "bool"}],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
 }, {
     "constant": true,
@@ -592,6 +622,14 @@ var departmentAbi = [{
     "payable": false,
     "stateMutability": "view",
     "type": "function"
+}, {
+    "inputs": [{"name": "_name", "type": "string"}, {
+        "name": "_treasuryAddress",
+        "type": "address"
+    }, {"name": "_coinAddress", "type": "address"}],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
 }, {
     "anonymous": false,
     "inputs": [{"indexed": true, "name": "_childDepartment", "type": "address"}, {
@@ -680,11 +718,11 @@ var departmentAbi = [{
         "indexed": true,
         "name": "_to",
         "type": "address"
-    }, {"indexed": false, "name": "_amount", "type": "uint256"}, {
+    }, {"indexed": true, "name": "_time", "type": "uint256"}, {
         "indexed": false,
-        "name": "_timeStamp",
+        "name": "_amount",
         "type": "uint256"
-    }],
+    }, {"indexed": false, "name": "_timeStamp", "type": "uint256"}],
     "name": "BudgetChange",
     "type": "event"
 }, {

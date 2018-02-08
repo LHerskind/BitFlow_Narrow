@@ -39,7 +39,12 @@ contract DepartmentCreatorInterface{
 
 }
 
+
 contract Department is Owned{
+	struct BudgetElement {
+		uint[] dates;
+		mapping(uint => uint) amounts;
+	}
 
 	string public name;
 	address public departmentSupervisor;
@@ -53,8 +58,7 @@ contract Department is Owned{
 	mapping(address => bool) public childDepartmentMapping;
 
 	address[] public budgetList;
-	mapping(address => uint) public budgetMapping;
-	mapping(address => bool) public isBudgetSetMapping;
+	mapping(address => BudgetElement) budgetMapping;
 
 	event ChildDepartmentCreated(address indexed _childDepartment, address indexed _childDepartmentCreator);
 	event ChildDepartmentAdded(address indexed _childDepartment);
@@ -66,7 +70,7 @@ contract Department is Owned{
 	event EmployeeFired(address indexed _employee, address indexed _firedBy);
 	event NewSupervisor(address indexed _supervisor);
 	event NewTreasury(address indexed _treasuryAddress);
-	event BudgetChange(address indexed _changer, address indexed _to, uint _amount, uint _timeStamp);
+	event BudgetChange(address indexed _changer, address indexed _to, uint indexed _time, uint _amount, uint _timeStamp);
 
 	modifier onlyEmployee {
 		require(employeeMapping[msg.sender]);
@@ -122,6 +126,19 @@ contract Department is Owned{
     function getBudgetCount() public constant returns(uint){
     	return budgetList.length;
     }
+    
+    function getBudgetElementDatesLength(address _to) public constant returns(uint){
+		return budgetMapping[_to].dates.length;
+	}
+	
+	function getBudgetElementDate(address _to, uint _index) public constant returns(uint){
+	    return budgetMapping[_to].dates[_index];
+	}
+
+	function getBudgetElementDateValue(address _to, uint _time) public constant returns(uint){
+		return budgetMapping[_to].amounts[_time];
+	}
+
 
     function createChildDepartment(address _childDepartmentCreator, string _name) onlyCLevel public returns (bool){
     	address _childDepartment = DepartmentCreatorInterface(_childDepartmentCreator).create(_name, treasuryAddress, address(internalCoin));
@@ -184,15 +201,20 @@ contract Department is Owned{
 		EmployeeFired(_employee, msg.sender);
 		return true;
 	}
+	
+	function changeBudget(address _to, uint _time, uint _amount) onlyEmployee public returns (bool){
+		require(_amount >= 0);
+		uint time = (_time+3600000) / 1000 / 60 / 60 / 24; // To get a different day each budget, at the minimum
 
-	function changeBudget(address _to, uint _amount) onlyEmployee public returns (bool){
-		require(_amount > 0);
-		if(!isBudgetSetMapping[_to]){
-			isBudgetSetMapping[_to] = true;
+		if(budgetMapping[_to].dates.length == 0){
 			budgetList.push(_to);
 		}
-		budgetMapping[_to] = _amount;
-		BudgetChange(msg.sender, _to, _amount, now);
+
+		if(budgetMapping[_to].amounts[time] == 0){
+			budgetMapping[_to].dates.push(time);
+		}
+		budgetMapping[_to].amounts[time] = _amount;
+		BudgetChange(msg.sender, _to, time, _amount, now);
 		return true;
 	}
 

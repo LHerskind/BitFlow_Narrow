@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="ion.rangeSlider-2.2.0/css/ion.rangeSlider.css"/>
+    <link type="text/css" rel="stylesheet" href="ion.rangeSlider-2.2.0/css/ion.rangeSlider.skinFlat.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -24,11 +26,15 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+<script src="js/vendor/moment.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="ion.rangeSlider-2.2.0/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/abis.js"></script>
 <script src="js/departmentAPI.js"></script>
-<script src="js/utils.js"></script>
+<script src="js/test.js"></script>
+<script src="js/plots.js"></script>
 <script src="js/main.js"></script>
 
 <body>
@@ -95,46 +101,54 @@
         </div>
 
         <div id="department_subtree_div" class="col s12">
-            <h3>Department spending subtree</h3>
-
-            <div id="total_spending_div">
-                <h4>Total</h4>
-                <div id="line_chart_div"></div>
-            </div>
-
-            <div id="spending_sankey_div">
-                <h4>Spending sankey chart</h4>
-                <div id="spending_sankey_chart_div"></div>
-            </div>
-
-            <div id="budget_sankey_div">
-                <h4>Budget</h4>
-                <div id="budget_sankey_chart_div"></div>
-            </div>
+            <h3>Department subtree</h3>
+            <div id="company_chart"></div>
         </div>
 
         <div id="department_div" class="col s12">
             <h3>Department spending only</h3>
-
-            <div id="spending_department_div">
-                <h4>Total</h4>
-                <div id="department_line_chart_div"></div>
-            </div>
-
-            <div id="spending_department_sankey_div">
-                <h4>Department sankey sankey chart</h4>
-                <div id="spending_department_sankey_chart_div"></div>
-            </div>
-
-            <div id="budget_department_sankey_div">
-                <h4>Budget</h4>
-                <div id="budget_department_sankey_chart_div"></div>
-            </div>
+            <div id="department_chart"></div>
         </div>
 
     </div>
 
     <div class="divider"></div>
+
+    <div class="row">
+        <table class="centered responsive-table">
+            <tr>
+                <td>
+                    <input name="groupPrecision" type="radio" id="days" onclick="precisionChange()">
+                    <label for="days">Days</label>
+                </td>
+                <td>
+                    <input name="groupPrecision" type="radio" id="weeks" onclick="precisionChange()">
+                    <label for="weeks">Weeks</label>
+                </td>
+                <td>
+                    <input name="groupPrecision" type="radio" id="months" checked onclick="precisionChange()">
+                    <label for="months">Months</label>
+                </td>
+                <td>
+                    <input name="groupPrecision" type="radio" id="years" onclick="precisionChange()">
+                    <label for="years">Years</label>
+                </td>
+                <td>
+                    <div class="switch">
+                        <label>
+                            Bar
+                            <input type="checkbox" id="bar_or_line_checkbox" onclick="barLineChange()">
+                            <span class="lever"></span>
+                            Line
+                        </label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="col s12">
+            <input type="text" id="dates_slider" name="range" value=""/>
+        </div>
+    </div>
 
     <div class="section">
 
@@ -153,6 +167,7 @@
                 <div class="col s12 m4" id="change_budget_div">
                     <h4>Change budget</h4>
                     <input placeholder="Address to budget" type="text" id="address_to_budget"> <br>
+                    <input placeholder="Date to budget" type="text" class="datepicker" id="date_to_budget">
                     <input placeholder="Amount" type="text" id="amount_to_budget"> <br>
                     <button onclick="changeBudgetButton()" class="blue-text waves-effect btn-flat">Change budget
                     </button>

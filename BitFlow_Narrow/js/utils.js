@@ -1,5 +1,31 @@
 // https://www.sitepoint.com/get-url-parameters-with-javascript/
 
+function getDateOfISOWeek(w, y) {
+    var simple = new Date(y, 0, 1 + (w - 1) * 7);
+    var dow = simple.getDay();
+    var ISOweekStart = simple;
+    if (dow <= 4)
+        ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+    else
+        ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+    return ISOweekStart;
+}
+
+function getTimeFromValue(value) {
+    return (value + 3600000) / 1000 / 60 / 60 / 24;
+}
+
+function getTimeFromEventValue(value) {
+    return (value + 3600) / 60 / 60 / 24;
+}
+
+function getDifferenceInMonths(d1, d2) {
+    var months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+
 function getAllUrlParams(url) {
 
     // get query string from url (optional) or window
