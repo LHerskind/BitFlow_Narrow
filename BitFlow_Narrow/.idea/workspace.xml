@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2fc1e08a-b200-45ff-9712-8c4e493b9d59" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+              <folding>
+                <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+                <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+                <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugins.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/plugins.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="abis.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/abis.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6001">
+              <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+                <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+                <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+                <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+                <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+                <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+                <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+                <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+                <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+                <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+                <element signature="e#16120#17460#0" expanded="false" />
+                <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+                <element signature="e#20408#20578#0" expanded="false" />
+                <element signature="e#20491#20566#0" expanded="false" />
+                <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+                <element signature="e#21293#21348#0" expanded="false" />
+                <element signature="n#!!block;n#event_spend#0" expanded="false" />
+                <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+                <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+                <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+                <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+                <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+                <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+                <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+                <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+                <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+                <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+                <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1003">
+              <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getStringForHeader</find>
+      <find>setupData</find>
+      <find>sankeyDataBudget</find>
+      <find>sankeyChartBudgetDepartement</find>
+      <find>sankeyChartBudget</find>
+      <find>sankeyChartBudgetDepartment</find>
+      <find>modal</find>
+      <find>budget[</find>
+      <find>budget[&quot;</find>
+      <find>budgetOutOfDepartment</find>
+      <find>addDatapoint</find>
+      <find>getBudgetElementDatesLen</find>
+      <find>getBudgetElementDate</find>
+      <find>updateDepartmentMapping</find>
+      <find>buildCompanyObject</find>
+      <find>transfersFrom</find>
+      <find>drawCompany</find>
+      <find>transferToCompanyObject</find>
+      <find>event_spend</find>
+      <find>addDatapointTransferDepartment</find>
+      <find>addDatapointTransfer</find>
+      <find>transfer</find>
+      <find>transferTo</find>
+      <find>getSpendingOutOfDepartment</find>
+      <find>getTimeFromEventValue</find>
+      <find>getBudgetOutOfDepartment</find>
+      <find>startDate</find>
+      <find>addTra</find>
+      <find>getBudgetElementDateValue</find>
+      <find>getSoebdu</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>h4</replace>
+      <replace>h3</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Lasse Herskind" />
+      </list>
+    </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/js/main.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/DepartmentAPI.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/Plots.js" />
+        <option value="$PROJECT_DIR$/js/utils.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/abis.js" />
+        <option value="$PROJECT_DIR$/js/departmentAPI.js" />
+        <option value="$PROJECT_DIR$/js/test.js" />
+        <option value="$PROJECT_DIR$/js/plots.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="275" />
+    <option name="y" value="-11" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BitFlow_Narrow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BitFlow_Narrow" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vcs.patch.to.clipboard" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PhpStorm_workspace\BitFlow_Narrow\Solidity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\BitFlow\BitFlow_Narrow\js\vendor" />
+      <recent name="D:\PhpStorm_workspace\BitFlow_Narrow" />
+      <recent name="D:\PhpStorm_workspace\BitFlow_Narrow\js\vendor" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="404.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BitFlow_Narrow/404.html" />
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BitFlow_Narrow/index.html" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.404.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.404.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fc1e08a-b200-45ff-9712-8c4e493b9d59" name="Default" comment="" />
+      <created>1516869666455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1516869666455</updated>
+      <workItem from="1516869668463" duration="10502000" />
+      <workItem from="1516884574339" duration="5605000" />
+      <workItem from="1516892662286" duration="2493000" />
+      <workItem from="1516915134684" duration="850000" />
+      <workItem from="1516916024770" duration="5966000" />
+      <workItem from="1516966974157" duration="2086000" />
+      <workItem from="1516983896142" duration="9843000" />
+      <workItem from="1517004739410" duration="2209000" />
+      <workItem from="1517046356926" duration="10792000" />
+      <workItem from="1517071756919" duration="10246000" />
+      <workItem from="1517085171196" duration="30000" />
+      <workItem from="1517086950884" duration="5805000" />
+      <workItem from="1517144438236" duration="2252000" />
+      <workItem from="1517210938129" duration="11481000" />
+      <workItem from="1517245388186" duration="6020000" />
+      <workItem from="1517257712283" duration="5054000" />
+      <workItem from="1517300372529" duration="6734000" />
+      <workItem from="1517343236421" duration="1649000" />
+      <workItem from="1517345382999" duration="2224000" />
+      <workItem from="1517382524142" duration="6516000" />
+      <workItem from="1517393636627" duration="36000" />
+      <workItem from="1517422930264" duration="606000" />
+      <workItem from="1517470054693" duration="19000" />
+      <workItem from="1517470112798" duration="13208000" />
+      <workItem from="1517488844834" duration="11606000" />
+      <workItem from="1517562634805" duration="868000" />
+      <workItem from="1517571811007" duration="39000" />
+      <workItem from="1517992954244" duration="4744000" />
+      <workItem from="1518038911738" duration="2725000" />
+      <workItem from="1518068882224" duration="38972000" />
+      <workItem from="1518122935791" duration="309000" />
+    </task>
+    <task id="LOCAL-00001" summary="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions">
+      <created>1517218287693</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1517218287693</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions">
+      <created>1517218410504</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1517218410504</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions">
+      <created>1517218791655</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1517218791655</updated>
+    </task>
+    <task id="LOCAL-00004" summary="First GUI partly finished.&#10;&#10;Possible future work:&#10;Extend the &quot;department&quot; tab to enforce all the functionality of &quot;departmenttree&quot;.">
+      <created>1517388026505</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1517388026505</updated>
+    </task>
+    <task id="LOCAL-00005" summary="First GUI partly finished.">
+      <created>1517502991459</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1517502991459</updated>
+    </task>
+    <task id="LOCAL-00006" summary="First GUI mostly finished">
+      <created>1517571832042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1517571832043</updated>
+    </task>
+    <task id="LOCAL-00007" summary="First GUI mostly finished.&#10;Small bug with linechart fixed">
+      <created>1517996769866</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1517996769867</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Drastic UI and backend changes. &#10;Budgets are now not address =&gt; uint but address =&gt; budgetElement[]">
+      <created>1518123152843</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1518123152843</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="181489000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions" />
+    <MESSAGE value="First GUI partly finished.&#10;&#10;Possible future work:" />
+    <MESSAGE value="First GUI partly finished.&#10;&#10;Possible future work:&#10;Extend the &quot;department&quot; tab to enforce all the functionality of &quot;departmenttree&quot;." />
+    <MESSAGE value="First GUI partly finished." />
+    <MESSAGE value="First GUI mostly finished" />
+    <MESSAGE value="First GUI mostly finished.&#10;Small bug with linechart fixed" />
+    <MESSAGE value="Drastic UI and backend changes. &#10;Budgets are now not address =&gt; uint but address =&gt; budgetElement[]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drastic UI and backend changes. &#10;Budgets are now not address =&gt; uint but address =&gt; budgetElement[]" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="18" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3128">
+          <caret line="184" column="39" lean-forward="false" selection-start-line="184" selection-start-column="39" selection-end-line="184" selection-end-column="64" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/abis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7157">
+          <caret line="421" column="13" lean-forward="false" selection-start-line="421" selection-start-column="13" selection-end-line="421" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/departmentAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5253">
+          <caret line="309" column="44" lean-forward="true" selection-start-line="309" selection-start-column="44" selection-end-line="309" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6477">
+          <caret line="381" column="61" lean-forward="false" selection-start-line="381" selection-start-column="61" selection-end-line="381" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/departmentAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/abis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17918">
+          <caret line="1054" column="30" lean-forward="false" selection-start-line="1054" selection-start-column="30" selection-end-line="1054" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/departmentAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="54" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/abis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17918">
+          <caret line="1054" column="30" lean-forward="false" selection-start-line="1054" selection-start-column="30" selection-end-line="1054" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5015">
+          <caret line="381" column="61" lean-forward="true" selection-start-line="381" selection-start-column="61" selection-end-line="381" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19074">
+          <caret line="1122" column="39" lean-forward="true" selection-start-line="1122" selection-start-column="39" selection-end-line="1122" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18819">
+          <caret line="1107" column="2" lean-forward="true" selection-start-line="1107" selection-start-column="2" selection-end-line="1107" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26027">
+          <caret line="1640" column="9" lean-forward="true" selection-start-line="1640" selection-start-column="9" selection-end-line="1640" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24191">
+          <caret line="1423" column="5" lean-forward="true" selection-start-line="1423" selection-start-column="5" selection-end-line="1423" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24803">
+          <caret line="1459" column="0" lean-forward="true" selection-start-line="1459" selection-start-column="0" selection-end-line="1459" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18836">
+          <caret line="1108" column="17" lean-forward="true" selection-start-line="1108" selection-start-column="17" selection-end-line="1108" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24038">
+          <caret line="1414" column="0" lean-forward="true" selection-start-line="1414" selection-start-column="0" selection-end-line="1414" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18343">
+          <caret line="1084" column="2" lean-forward="true" selection-start-line="1084" selection-start-column="2" selection-end-line="1084" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18207">
+          <caret line="1071" column="22" lean-forward="true" selection-start-line="1071" selection-start-column="22" selection-end-line="1071" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21556">
+          <caret line="1268" column="81" lean-forward="false" selection-start-line="1268" selection-start-column="81" selection-end-line="1268" selection-end-column="81" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/vendor/modernizr-3.5.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/vendor/web3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="0" column="2673" lean-forward="false" selection-start-line="0" selection-start-column="2673" selection-end-line="0" selection-end-column="2673" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/humans.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Solidity/Department.sol" />
+    <entry file="uml://JavaScript-modules-diagram/D:/GitHub/BitFlow/BitFlow_Narrow/js/main.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/js/main.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="815.0" y="369.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/vendor/jquery.tablesorter.min.js" />
+    <entry file="file://$PROJECT_DIR$/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding>
+            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/abis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6001">
+          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/departmentAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="154" column="22" lean-forward="true" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/plots.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="43" column="49" lean-forward="true" selection-start-line="43" selection-start-column="49" selection-end-line="44" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#updateCompany#0" expanded="false" />
+            <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
+            <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
+            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
+            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
+            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
+            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
+            <element signature="e#20408#20578#0" expanded="false" />
+            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
+            <element signature="e#21293#21348#0" expanded="false" />
+            <element signature="n#!!block;n#event_spend#0" expanded="false" />
+            <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
+            <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
+            <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
+            <element signature="n#!!block;n#createChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#addChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeChildDepartmentButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
+            <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
