@@ -97,6 +97,7 @@ function setupSlider() {
         },
         onFinish: function (data) {
             precisionChange();
+            updateBudgetSpendingTable();
         }
     });
 }
@@ -271,7 +272,6 @@ function getSpendingOutOfDepartment(_start, _end, _subtree) {
         var tempDay = datesTransferred[i];
         if (startDay <= tempDay && tempDay < endDay) {
             for (var j = 0; j < transfersDate[tempDay].length; j++) {
-//                console.log(j, tempDay, transfersDate[tempDay][j]);
                 if (transfersDate[tempDay][j].contract === _subtree.id) {
                     value += parseInt(transfersDate[tempDay][j].amount) / 100;
                 }
@@ -408,35 +408,58 @@ function buildCompanyObject(_subRoot, _contractAddress) {
     }
 }
 
+function getSpendingBetween(_parentAddress, _childAddress, _fromTime, _toTime) {
+    if (transfersTo[_childAddress] === undefined) {
+        return 0;
+    }
+
+    var value = 0;
+    for (var i = 0; i < transfersTo[_childAddress].length; i++) {
+        if (transfersTo[_childAddress][i].contract === _parentAddress) {
+            if (_fromTime <= transfersTo[_childAddress][i].timestamp && transfersTo[_childAddress][i].timestamp < _toTime) {
+                value += parseFloat(transfersTo[_childAddress][i].amount)
+            }
+        }
+    }
+
+    return value;
+}
+
 function getStringForHeader(_departmentAddress, _budget, _spending, _parentAddress) {
     var output = _departmentAddress;
     if (departmentMappingAddressToString[_departmentAddress] !== undefined) {
         output = departmentMappingAddressToString[_departmentAddress];
     }
+    var valueSplit = slider[0].value.split(";");
+    var fromTime = getTimeFromValue(valueSplit[0] * 1000);
+    var toTime = getTimeFromValue(valueSplit[1] * 1000);
+
+    var budgetAmount = 0;
 
     if (_budget === undefined) {
         output += "&nbsp;" + "<strong> budget </strong>: undefined ";
     } else {
-        var budgetAmount = 0;
         for (var i = 0; i < _budget.dates.length; i++) {
-            budgetAmount += parseFloat(_budget.amounts[_budget.dates[i]]);
+            if (fromTime <= _budget.dates[i] && _budget.dates[i] < toTime) {
+                budgetAmount += parseFloat(_budget.amounts[_budget.dates[i]]);
+            }
         }
         output += "&nbsp; " + "<strong> budget </strong>: " + getValueInCoins(budgetAmount, BKK);
     }
 
+    var spendingAmount = getSpendingBetween(_parentAddress, _departmentAddress, valueSplit[0], valueSplit[1]);
     if (_spending === undefined) {
         output += "&nbsp;" + "<strong> spending </strong>: none ";
     } else {
-        output += "&nbsp;" + "<strong> spending </strong>: " + getValueInCoins(parseFloat(_spending), BKK);
+        output += "&nbsp;" + "<strong> spending </strong>: " + getValueInCoins(spendingAmount, BKK);
     }
 
-    if (_budget !== undefined && _spending !== undefined) {
-        if (_spending > _budget) {
-            output += '<i class="material-icons red-text">sentiment_very_dissatisfied</i>';
-        } else {
-            output += '<i class="material-icons green-text">sentiment_very_satisfied</i>';
-        }
+    if (spendingAmount > budgetAmount) {
+        output += '<i class="material-icons red-text">sentiment_very_dissatisfied</i>';
+    } else {
+        output += '<i class="material-icons green-text">sentiment_very_satisfied</i>';
     }
+
     output += "<i class='material-icons' onclick='showTransactionsInModal(\"" + _departmentAddress + "\",\"" + _parentAddress + "\");'>list</i>";
 
     return output;
@@ -564,6 +587,8 @@ function setupListenerTransfer(_contractAddress) {
         for (var event in events) {
             event_spend(event, true, false);
         }
+        updateBudgetSpendingTable();
+        precisionChange();
     });
     events_transferOut.watch(function (error, event) {
         if (error) return;
@@ -576,6 +601,8 @@ function setupListenerTransfer(_contractAddress) {
         for (var event in events) {
             event_spend(event, true, true);
         }
+        updateBudgetSpendingTable();
+        precisionChange();
     });
     events_transferAround.watch(function (error, event) {
         if (error) return;
@@ -584,18 +611,21 @@ function setupListenerTransfer(_contractAddress) {
 }
 
 function event_spend(event, old, intern) {
-    if (event.args == undefined) return;
+    if (event.args === undefined) return;
 
     if (old) {
-        subfunction(event.args._from, event.args._to.c[0], event.args._amount, event.args._timeStamp, intern, event.address);
+        subfunction(event.args._from, event.args._to.c[0], event.args._amount, event.args._timeStamp, intern, event.address, old);
     } else {
-        subfunction(event.args._from, event.args._to, event.args._amount, event.args._timeStamp, intern, event.address);
+        subfunction(event.args._from, event.args._to, event.args._amount, event.args._timeStamp, intern, event.address, old);
     }
 
-    function subfunction(_from, _to, _amount, _timeStamp, _isIntern, _contractAddress) {
+    function subfunction(_from, _to, _amount, _timeStamp, _isIntern, _contractAddress, _old) {
         addTransactionToTransactions(_contractAddress, _from, _to, _amount, _timeStamp, intern);
         transferToCompanyObject(_contractAddress, _to, _amount, economy);
-        updateBudgetSpendingTable();
+        if (!_old) {
+            updateBudgetSpendingTable();
+            precisionChange();
+        }
     }
 }
 
@@ -631,6 +661,7 @@ function addTransactionToTransactions(_contractAddress, _from, _to, _amount, _ti
 }
 
 function showTransactionsInModal(_toAddress, _fromAddress) {
+    var valueSplit = slider[0].value.split(";");
     $("#modal_transaction_content").empty();
 
     var header = document.createElement("p");
@@ -664,7 +695,7 @@ function showTransactionsInModal(_toAddress, _fromAddress) {
     if (transfersTo[_toAddress] !== undefined) {
         for (var i = 0; i < transfersTo[_toAddress].length; i++) {
             if (_fromAddress !== undefined) {
-                if (_fromAddress !== transfersTo[_toAddress][i].contract) {
+                if (_fromAddress !== transfersTo[_toAddress][i].contract || transfersTo[_toAddress][i].timestamp >= valueSplit[1] || transfersTo[_toAddress][i].timestamp < valueSplit[0]) {
                     continue;
                 }
             }

@@ -9,12 +9,12 @@ function redrawChart() {
     }
 }
 
+
 function precisionChange() {
     var value = $("input:radio[name='groupPrecision']:checked")[0].id;
     var valueSplit = slider[0].value.split(";");
     var from = new Date(parseInt(valueSplit[0]) * 1000);
     var to = new Date(parseInt(valueSplit[1]) * 1000);
-
     if (value === "years") {
         companyChartOptions.hAxis.title = "Years";
         departmentChartOptions.hAxis.title = "Years";
@@ -77,19 +77,24 @@ function initCompanyChart() {
     companyChart.draw(companyData, companyChartOptions);
 }
 
-function drawCompanyChartDay(_start, _end) {
-    companyData.removeRows(0, companyData.getNumberOfRows());
-
-    var daysBetween = getTimeFromValue(_end.getTime()) - getTimeFromValue(_start.getTime());
-
-    var year = _start.getFullYear();
-    var month = _start.getMonth();
-    var day = _start.getDate();
-
-
-    for (var i = 0; i < daysBetween + 1; i++) {
-        companyData.addRow([new Date(year, month, day + i), getBudgetOutOfCompany(new Date(year, month, day + i), new Date(year, month, day + i + 1)), getSpendingOutOfCompany(new Date(year, month, day + i), new Date(year, month, day + i + 1))]);
+function drawCompanyChartDay(_start, _end, _keepData) {
+    if (_keepData === undefined) {
+        _keepData = false;
     }
+    if (!_keepData) {
+        companyData.removeRows(0, companyData.getNumberOfRows());
+
+        var daysBetween = getTimeFromValue(_end.getTime()) - getTimeFromValue(_start.getTime());
+
+        var year = _start.getFullYear();
+        var month = _start.getMonth();
+        var day = _start.getDate();
+
+        for (var i = 0; i < daysBetween + 1; i++) {
+            companyData.addRow([new Date(year, month, day + i), getBudgetOutOfCompany(new Date(year, month, day + i), new Date(year, month, day + i + 1)), getSpendingOutOfCompany(new Date(year, month, day + i), new Date(year, month, day + i + 1))]);
+        }
+    }
+
     _start.setDate(_start.getDate() - 1);
     _end.setDate(_end.getDate() + 1);
 

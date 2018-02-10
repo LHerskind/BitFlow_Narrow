@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fc1e08a-b200-45ff-9712-8c4e493b9d59" name="Default" comment="" />
+    <list default="true" id="2fc1e08a-b200-45ff-9712-8c4e493b9d59" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change beforePath="$PROJECT_DIR$/js/plots.js" afterPath="$PROJECT_DIR$/js/plots.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,17 +13,37 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="plots.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/js/plots.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="122">
+                    <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="17">
               <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
               <folding>
-                <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-                <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-                <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+                <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+                <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+                <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
               </folding>
             </state>
           </provider>
@@ -38,7 +62,7 @@
       <file leaf-file-name="abis.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/abis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6001">
+            <state relative-caret-position="828">
               <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
               <folding />
             </state>
@@ -48,29 +72,30 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="78" column="59" lean-forward="false" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#!!block;n#updateCompany#0" expanded="false" />
                 <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
                 <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
                 <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+                <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
                 <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
                 <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-                <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
                 <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-                <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-                <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-                <element signature="e#16120#17460#0" expanded="false" />
+                <element signature="e#16944#18284#0" expanded="false" />
                 <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-                <element signature="e#20408#20578#0" expanded="false" />
-                <element signature="e#20491#20566#0" expanded="false" />
+                <element signature="e#21232#21402#0" expanded="false" />
+                <element signature="e#21315#21390#0" expanded="false" />
                 <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-                <element signature="e#21293#21348#0" expanded="false" />
                 <element signature="n#!!block;n#event_spend#0" expanded="false" />
                 <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+                <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
                 <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+                <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+                <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+                <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
                 <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
                 <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
                 <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -80,6 +105,10 @@
                 <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
                 <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
                 <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+                <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+                <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+                <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+                <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
               </folding>
             </state>
           </provider>
@@ -88,8 +117,8 @@
       <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -116,9 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getStringForHeader</find>
-      <find>setupData</find>
-      <find>sankeyDataBudget</find>
       <find>sankeyChartBudgetDepartement</find>
       <find>sankeyChartBudget</find>
       <find>sankeyChartBudgetDepartment</find>
@@ -146,6 +172,9 @@
       <find>addTra</find>
       <find>getBudgetElementDateValue</find>
       <find>getSoebdu</find>
+      <find>intern</find>
+      <find>console.log(</find>
+      <find>viewWindow</find>
     </findStrings>
     <replaceStrings>
       <replace>h4</replace>
@@ -189,8 +218,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="275" />
-    <option name="y" value="-11" />
+    <option name="x" value="466" />
+    <option name="y" value="-8" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -210,7 +239,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,10 +246,16 @@
               <item name="BitFlow_Narrow" type="b2602c69:ProjectViewProjectNode" />
               <item name="BitFlow_Narrow" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="BitFlow_Narrow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BitFlow_Narrow" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -232,13 +266,13 @@
     <property name="vcs.patch.to.clipboard" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PhpStorm_workspace\BitFlow_Narrow\Solidity" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\BitFlow\BitFlow_Narrow\js\vendor" />
       <recent name="D:\PhpStorm_workspace\BitFlow_Narrow" />
       <recent name="D:\PhpStorm_workspace\BitFlow_Narrow\js\vendor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PhpStorm_workspace\BitFlow_Narrow\Solidity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -310,7 +344,8 @@
       <workItem from="1517992954244" duration="4744000" />
       <workItem from="1518038911738" duration="2725000" />
       <workItem from="1518068882224" duration="38972000" />
-      <workItem from="1518122935791" duration="309000" />
+      <workItem from="1518122935791" duration="614000" />
+      <workItem from="1518257592894" duration="6088000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions">
       <created>1517218287693</created>
@@ -372,7 +407,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181489000" />
+    <option name="totallyTimeSpent" value="187882000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -438,9 +473,9 @@
         <state relative-caret-position="3128">
           <caret line="184" column="39" lean-forward="false" selection-start-line="184" selection-start-column="39" selection-end-line="184" selection-end-column="64" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -471,21 +506,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -495,6 +531,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -504,9 +544,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -521,21 +561,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -545,6 +586,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -570,9 +615,9 @@
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -603,21 +648,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -627,6 +673,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -636,9 +686,9 @@
         <state relative-caret-position="1394">
           <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -653,21 +703,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -677,6 +728,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -686,9 +741,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -703,21 +758,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -727,6 +783,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -736,9 +796,9 @@
         <state relative-caret-position="884">
           <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -753,21 +813,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -777,6 +838,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -786,9 +851,9 @@
         <state relative-caret-position="1241">
           <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -803,21 +868,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -827,6 +893,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -836,9 +906,9 @@
         <state relative-caret-position="1241">
           <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -853,21 +923,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -877,6 +948,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -886,9 +961,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -903,21 +978,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -927,6 +1003,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -936,9 +1016,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -953,21 +1033,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -977,6 +1058,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -986,9 +1071,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1003,21 +1088,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -1027,6 +1113,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1036,9 +1126,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1053,21 +1143,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -1077,6 +1168,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1086,9 +1181,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1103,21 +1198,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -1127,6 +1223,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1136,9 +1236,9 @@
         <state relative-caret-position="765">
           <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1153,21 +1253,22 @@
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -1177,6 +1278,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1240,14 +1345,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/vendor/jquery.tablesorter.min.js" />
-    <entry file="file://$PROJECT_DIR$/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1258,12 +1355,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="17">
           <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding>
-            <marker date="1518113692838" expanded="true" signature="45:1341" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="50:69" ph="..." />
-            <marker date="1518113692838" expanded="true" signature="1204:1300" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="45:1341" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="50:69" ph="..." />
+            <marker date="1518123348984" expanded="true" signature="1204:1300" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1276,14 +1373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/abis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6001">
-          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/departmentAPI.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2618">
@@ -1292,39 +1381,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/abis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/plots.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="43" column="49" lean-forward="true" selection-start-line="43" selection-start-column="49" selection-end-line="44" selection-end-column="52" />
+        <state relative-caret-position="122">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="78" column="59" lean-forward="false" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#updateCompany#0" expanded="false" />
             <element signature="n#!!block;n#updateMyUser#0" expanded="false" />
             <element signature="n#!!block;n#updateActionsAvailable#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
+            <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getBudgetOutOfCompany#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="n#!!block;n#transferToCompanyObject#0" expanded="false" />
             <element signature="n#!!block;n#buildCompanyObject#0" expanded="false" />
-            <element signature="n#!!block;n#getStringForHeader#0" expanded="false" />
-            <element signature="n#!!block;n#buildingBudgetSpendingTable#0" expanded="false" />
-            <element signature="e#16120#17460#0" expanded="false" />
+            <element signature="e#16944#18284#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransferSubtree#0" expanded="false" />
-            <element signature="e#20408#20578#0" expanded="false" />
-            <element signature="e#20491#20566#0" expanded="false" />
+            <element signature="e#21232#21402#0" expanded="false" />
+            <element signature="e#21315#21390#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerTransfer#0" expanded="false" />
-            <element signature="e#21293#21348#0" expanded="false" />
             <element signature="n#!!block;n#event_spend#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
+            <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
+            <element signature="n#!!block;n#transferBKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#transferCDKKButton#0" expanded="false" />
+            <element signature="n#!!block;n#changeBudgetButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorButton#0" expanded="false" />
             <element signature="n#!!block;n#setSupervisorChildButton#0" expanded="false" />
             <element signature="n#!!block;n#setTreasuryAddressButton#0" expanded="false" />
@@ -1334,6 +1440,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
+            <marker date="1518264182253" expanded="true" signature="15681:15687" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16001:16007" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16252:16258" ph=" " />
+            <marker date="1518264182253" expanded="true" signature="16332:16338" ph=" " />
           </folding>
         </state>
       </provider>
