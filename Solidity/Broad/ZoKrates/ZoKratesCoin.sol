@@ -51,7 +51,7 @@ contract SenderVerifier{
 }
 
 contract RecieveVerifier{
-     function verifyTx(uint[2] a, uint[2] a_p, uint[2][2] b, uint[2] b_p, uint[2] c,uint[2] c_p,uint[2] h,uint[2] k,uint[4] input) public returns (bool r);
+     function verifyTx(uint[2] a, uint[2] a_p, uint[2][2] b, uint[2] b_p, uint[2] c,uint[2] c_p,uint[2] h,uint[2] k,uint[4] input)public returns (bool r);
 }
 
 contract PrivateCoin is Owned {
