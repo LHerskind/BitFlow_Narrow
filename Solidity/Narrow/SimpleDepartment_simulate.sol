@@ -236,6 +236,12 @@ contract Department is Owned{
 		TransferFundsOut(msg.sender, _to, _amount, _time);
 		return true;
 	}
+
+	function simulateTransferFundsIntern(address _to, uint _time, uint _amount) onlyEmployee public returns (bool){
+		internalCoin.transfer(_to, _amount);
+		TransferFundsIntern(msg.sender, _to, _amount, _time);
+		return true;
+	}
 	
 }
 
@@ -258,7 +264,3 @@ contract SimpleDepartment is Department{
 	}
 
 }
-
-// https://medium.com/@jgm.orinoco/ethereum-smart-service-payment-with-tokens-60894a79f75c
-// https://github.com/ethereum/EIPs/issues/677
-// https://stackoverflow.com/questions/42230532/getting-the-address-of-a-contract-deployed-by-another-contract
