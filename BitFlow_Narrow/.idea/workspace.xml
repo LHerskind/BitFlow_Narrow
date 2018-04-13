@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2fc1e08a-b200-45ff-9712-8c4e493b9d59" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/abis.js" afterPath="$PROJECT_DIR$/js/abis.js" />
-      <change beforePath="$PROJECT_DIR$/js/departmentAPI.js" afterPath="$PROJECT_DIR$/js/departmentAPI.js" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change beforePath="$PROJECT_DIR$/js/plots.js" afterPath="$PROJECT_DIR$/js/plots.js" />
-      <change beforePath="$PROJECT_DIR$/js/test.js" afterPath="$PROJECT_DIR$/js/test.js" />
-      <change beforePath="$PROJECT_DIR$/js/vendor/web3.min.js" afterPath="$PROJECT_DIR$/js/vendor/web3.min.js" />
-      <change beforePath="$PROJECT_DIR$/../Solidity/Narrow/SimpleDepartment.sol" afterPath="$PROJECT_DIR$/../Solidity/Narrow/SimpleDepartment.sol" />
-      <change beforePath="$PROJECT_DIR$/../Solidity/Narrow/Treasury.sol" afterPath="$PROJECT_DIR$/../Solidity/Narrow/Treasury.sol" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +58,7 @@
                 <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
                 <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
                 <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-                <element signature="e#17925#19265#0" expanded="false" />
+                <element signature="e#17965#19305#0" expanded="false" />
                 <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
                 <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
                 <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -82,10 +73,10 @@
                 <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
                 <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
                 <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-                <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-                <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-                <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-                <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+                <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+                <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+                <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+                <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
               </folding>
             </state>
           </provider>
@@ -356,7 +347,7 @@
       <workItem from="1522959362783" duration="4306000" />
       <workItem from="1523016838948" duration="4324000" />
       <workItem from="1523367696399" duration="2259000" />
-      <workItem from="1523631266458" duration="12294000" />
+      <workItem from="1523631266458" duration="12654000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly as hell, but it seems to be able to do what it should do.&#10;We are having problems when using the MetaMask plugin hence we are not able to watch for events here. Instead a local node is preferred, mining on a single thread will also allow it to properly broadcast the transactions">
       <created>1517218287693</created>
@@ -421,11 +412,25 @@
       <option name="project" value="LOCAL" />
       <updated>1518264276385</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated so the table is only containing data between the chosen dates.">
+      <created>1523644909675</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523644909675</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated so the table is only containing data between the chosen dates.">
+      <created>1523645247648</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1523645247648</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213632000" />
+    <option name="totallyTimeSpent" value="213992000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -438,12 +443,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -512,7 +516,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -527,10 +531,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -557,7 +561,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -572,10 +576,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -632,7 +636,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -647,10 +651,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -677,7 +681,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -692,10 +696,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -722,7 +726,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -737,10 +741,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -767,7 +771,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -782,10 +786,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -812,7 +816,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -827,10 +831,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -857,7 +861,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -872,10 +876,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -902,7 +906,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -917,10 +921,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -947,7 +951,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -962,10 +966,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -992,7 +996,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -1007,10 +1011,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1037,7 +1041,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -1052,10 +1056,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1082,7 +1086,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -1097,10 +1101,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1127,7 +1131,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -1142,10 +1146,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1285,7 +1289,7 @@
             <element signature="n#!!block;n#getBudgetOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfDepartment#0" expanded="false" />
             <element signature="n#!!block;n#getSpendingOutOfCompany#0" expanded="false" />
-            <element signature="e#17925#19265#0" expanded="false" />
+            <element signature="e#17965#19305#0" expanded="false" />
             <element signature="n#!!block;n#setupListenerBudget#0" expanded="false" />
             <element signature="n#!!block;n#addTransactionToTransactions#0" expanded="false" />
             <element signature="n#!!block;n#showTransactionsInModal#0" expanded="false" />
@@ -1300,10 +1304,10 @@
             <element signature="n#!!block;n#transferChildDepartmentOwnershipButton#0" expanded="false" />
             <element signature="n#!!block;n#addEmployeeButton#0" expanded="false" />
             <element signature="n#!!block;n#removeEmployeeButton#0" expanded="false" />
-            <marker date="1523643246660" expanded="true" signature="16668:16674" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="16982:16988" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17233:17239" ph=" " />
-            <marker date="1523643246660" expanded="true" signature="17313:17319" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="16708:16714" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17022:17028" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17273:17279" ph=" " />
+            <marker date="1523644895599" expanded="true" signature="17353:17359" ph=" " />
           </folding>
         </state>
       </provider>
