@@ -162,10 +162,23 @@ function simulateTransferCDKK(_to, _time, _amount) {
     if (provider.isAddress(_to)) {
         department.simulateTransferFundsOutside.sendTransaction(_to, _time, _amount, {
             from: address,
-            gas: 200000,
+            gas: 400000,
             gasPrice: getGasPrice()
         }, submitter);
     } else {
         console.log("Addressen er ikke gyldig");
     }
 }
+
+function simulateTransferBKK(_to, _time, _amount) {
+    if (provider.isAddress(_to)) {
+        department.simulateTransferFundsIntern.sendTransaction(_to, _time, _amount, {
+            from: address,
+            gas: 400000,
+            gasPrice: getGasPrice()
+        }, submitter);
+    } else {
+        console.log("Addressen er ikke gyldig");
+    }
+}
+

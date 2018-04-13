@@ -25,6 +25,12 @@ function generateSpending(_start, _end, _mean, _maxVariance, _toWhom) {
         var amountInCDKK = Math.floor(value * 100);
 
         simulateTransferCDKK(_toWhom, time, amountInCDKK);
+//        simulateTransferBKK(_toWhom, time, amountInCDKK);
     }
+
+}
+
+
+function generateCompany() {
 
 }

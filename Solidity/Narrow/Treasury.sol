@@ -98,12 +98,12 @@ contract Treasury is Owned {
 
         MintableToken fromCoin = ownedCoin;
         MintableToken toCoin = notOwnedCoin;
-        uint amountToSend = _amount / price * 100;
+        uint amountToSend = (_amount * 100) / price;
 
         if (msg.sender == address(notOwnedCoin)){
             fromCoin = notOwnedCoin;
             toCoin = ownedCoin;
-            amountToSend = _amount * price / 100;
+            amountToSend = (_amount * 100) / price;
             if (amountToSend > ownedCoin.balanceOf(address(this))){
                 require(ownedCoin.mint(address(this), (amountToSend -  ownedCoin.balanceOf(address(this)))));
             }
@@ -111,7 +111,7 @@ contract Treasury is Owned {
 
         address _to = _sender;
 
-        if(_data.length > 10){
+        if(_data.length > 10){ // ==20
             _to = bytesToAddr(_data);
         }
 

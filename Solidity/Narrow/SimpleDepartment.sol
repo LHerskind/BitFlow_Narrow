@@ -213,6 +213,7 @@ contract Department is Owned{
 		if(budgetMapping[_to].amounts[time] == 0){
 			budgetMapping[_to].dates.push(time);
 		}
+		
 		budgetMapping[_to].amounts[time] = _amount;
 		BudgetChange(msg.sender, _to, time, _amount, now);
 		return true;

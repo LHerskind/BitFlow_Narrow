@@ -53,17 +53,16 @@ function barLineChange() {
 function initCompanyChart() {
     companyChartOptions = {
         animation: {
-            duration: 600,
-            easing: 'out'
+            easing: 'out',
+            duration: 1000
         },
         height: 400,
-        title: 'Budget and expenses for the department subtree',
+        title: 'Budget and expenses leaving the department subtree',
         vAxis: {title: 'DKK'},
         hAxis: {
             title: 'Month',
             viewWindow: {}
         },
-        curveType: 'function',
         seriesType: 'bars'
     };
 
@@ -154,17 +153,16 @@ function drawCompanyChartYear(_start, _end) {
 function initDepartmentChart() {
     departmentChartOptions = {
         animation: {
-            duration: 600,
-            easing: 'out'
+            easing: 'out',
+            duration: 1000
         },
         height: 400,
-        title: 'Budget and expenses for the department subtree',
+        title: 'Budget and expenses going down in the department subtree',
         vAxis: {title: 'DKK'},
         hAxis: {
             title: 'Month',
             viewWindow: {}
         },
-//        curveType: 'function',
         seriesType: 'bars'
     };
 

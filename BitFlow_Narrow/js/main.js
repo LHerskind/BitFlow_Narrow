@@ -14,13 +14,15 @@ if (typeof web3 !== 'undefined' && useMetaMask) {
 
 var simulation = false;
 
+var changes_since_gui_update = 0;
+
 var mintabletokenContract, treasuryContract, departmentContract;
 
 var BKK, CDKK, treasury, department;
 var address;
 
-var departmentAddress = "0x18e6831e484eb50a91158ae8dc3ff05a95de892b"; // "0x1f1f3066bf200d9a1b5733d0487a6399326607f2";
-var simpleDepartmentCreatorAddress = "0xff2d7dc1576d4ce1613d1b2a69b2f3bc9c74a29a";
+var departmentAddress = "0xcbddd08901fcf676bbba3a1d697bce16d66533dc"; // "0x1f1f3066bf200d9a1b5733d0487a6399326607f2";
+var simpleDepartmentCreatorAddress = "0xd92380b56f2cdd5804b53faa098495b598cc51bd";
 
 var departmentMappingAddressToString = {};
 var departmentMappingStringToAddress = {};
@@ -65,8 +67,16 @@ $(document).ready(function () {
     updateAll();
 
     if (simulation) {
-        generateBudget(new Date(2018, 0, 1), new Date(2018, 0, 365), 500, 400, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
-        generateSpending(new Date(2018, 0, 1), new Date(2018, 0, 365), 400, 500, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
+        /*        generateBudget(new Date(2018, 0, 1), new Date(2018, 0, 365), 500, 400, "0xb731345673a17f91bf6b3b792390359db07aec15");
+                console.log("First Budget");
+                generateSpending(new Date(2018, 0, 1), new Date(2018, 0, 365), 400, 500, "0xb731345673a17f91bf6b3b792390359db07aec15");
+                console.log("First Spend");
+                generateBudget(new Date(2018, 0, 1), new Date(2018, 0, 365), 500, 400, "0x1d1c2362b47d2b04b6520468157c8427bd956068");
+                console.log("Second Budget");
+                generateSpending(new Date(2018, 0, 1), new Date(2018, 0, 365), 400, 500, "0x1d1c2362b47d2b04b6520468157c8427bd956068");
+                console.log("Second spend");*/
+        generateBudget(new Date(2018, 0, 1), new Date(2018, 0, 365), 250, 200, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
+        generateSpending(new Date(2018, 0, 1), new Date(2018, 0, 365), 200, 250, "0x827b1c94ada7597e8f6b8fabeb3d89182314857c");
     }
 });
 
@@ -157,15 +167,16 @@ function updateCompany() {
         balanceDivSubTree.innerHTML = "BKK balance, subtree: " + getValueInCoins(result, BKK) + "\n";
         document.getElementById("companyContainer").appendChild(balanceDivSubTree);
     });
+
 }
 
 function updateMyUser() {
     provider.eth.getAccounts(function (err, accounts) {
         address = accounts[0];
         updateActionsAvailable(address);
-        provider.eth.getBalance(accounts[0], function (err, balance) {
+        provider.eth.getBalance(accounts[0], function (err, _balance) {
             document.getElementById("myAddress").innerHTML = address;
-            var balance = provider.fromWei(balance, 'ether');
+            var balance = provider.fromWei(_balance, 'ether');
             document.getElementById("myBalance").innerHTML = balance;
         });
         BKK.balanceOf(address, function (error, result) {
@@ -197,15 +208,29 @@ function getValueInCoins(amount, coin) {
 }
 
 function googlePackagesLoaded() {
+    initDepartmentChart();
+    initCompanyChart();
+
     buildCompanyObject(economy, departmentAddress);
     console.log(economy);
 
     updateDepartmentMapping(department.address);
     updateBudgetSpendingTable();
 
-    initDepartmentChart();
-    initCompanyChart();
     precisionChange();
+
+    setInterval(function () {
+            if (changes_since_gui_update > 0) {
+                changes_since_gui_update = 0;
+                updateBudgetSpendingTable();
+                precisionChange();
+            }
+        }
+
+        ,
+        2000
+    )
+    ;
 
     setupData();
 }
@@ -225,7 +250,6 @@ function updateDepartmentMapping(_contractAddress) {
         updateDepartmentMapping(childAddress);
     }
 }
-
 
 function updateBudgetSpendingTable() {
     $('#table_ul').empty();
@@ -437,7 +461,7 @@ function getStringForHeader(_departmentAddress, _budget, _spending, _parentAddre
     var budgetAmount = 0;
 
     if (_budget === undefined) {
-        output += "&nbsp;" + "<strong> budget </strong>: undefined ";
+        output += "&nbsp;" + "<strong> budget </strong>: none";
     } else {
         for (var i = 0; i < _budget.dates.length; i++) {
             if (fromTime <= _budget.dates[i] && _budget.dates[i] < toTime) {
@@ -587,8 +611,8 @@ function setupListenerTransfer(_contractAddress) {
         for (var event in events) {
             event_spend(event, true, false);
         }
-        updateBudgetSpendingTable();
-        precisionChange();
+        //updateBudgetSpendingTable();
+        //redrawChart();
     });
     events_transferOut.watch(function (error, event) {
         if (error) return;
@@ -601,8 +625,8 @@ function setupListenerTransfer(_contractAddress) {
         for (var event in events) {
             event_spend(event, true, true);
         }
-        updateBudgetSpendingTable();
-        precisionChange();
+        //updateBudgetSpendingTable();
+        //redrawChart();
     });
     events_transferAround.watch(function (error, event) {
         if (error) return;
@@ -612,6 +636,7 @@ function setupListenerTransfer(_contractAddress) {
 
 function event_spend(event, old, intern) {
     if (event.args === undefined) return;
+    changes_since_gui_update++;
 
     if (old) {
         subfunction(event.args._from, event.args._to.c[0], event.args._amount, event.args._timeStamp, intern, event.address, old);
@@ -623,8 +648,8 @@ function event_spend(event, old, intern) {
         addTransactionToTransactions(_contractAddress, _from, _to, _amount, _timeStamp, intern);
         transferToCompanyObject(_contractAddress, _to, _amount, economy);
         if (!_old) {
-            updateBudgetSpendingTable();
-            precisionChange();
+            //updateBudgetSpendingTable();
+            //redrawChart();
         }
     }
 }

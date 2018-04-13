@@ -377,6 +377,17 @@ var departmentAbi = [{
     "stateMutability": "nonpayable",
     "type": "function"
 }, {
+    "constant": false,
+    "inputs": [{"name": "_to", "type": "address"}, {"name": "_time", "type": "uint256"}, {
+        "name": "_amount",
+        "type": "uint256"
+    }],
+    "name": "simulateTransferFundsIntern",
+    "outputs": [{"name": "", "type": "bool"}],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
     "constant": true,
     "inputs": [],
     "name": "departmentSupervisor",
