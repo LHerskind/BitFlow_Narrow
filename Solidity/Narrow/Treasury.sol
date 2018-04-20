@@ -1,5 +1,24 @@
 pragma solidity ^0.4.19;
 
+library SafeMath {
+    function add(uint a, uint b) internal pure returns (uint c) {
+        c = a + b;
+        require(c >= a);
+     }
+    function sub(uint a, uint b) internal pure returns (uint c) {
+        require(b <= a);
+            c = a - b;
+    }
+    function mul(uint a, uint b) internal pure returns (uint c) {
+        c = a * b;
+        require(a == 0 || c / a == b);
+    }
+    function div(uint a, uint b) internal pure returns (uint c) {
+        require(b > 0);
+        c = a / b;
+    }
+}
+
 contract Owned {
     address public owner;
     address public newOwner;
@@ -43,18 +62,17 @@ contract MintableToken is Owned{
 }
 
 contract Treasury is Owned {
+    using SafeMath for uint;
 
-	string public name;
     bool public allowTrades = true;
-    uint public price = 100; // owned per 100 notOwned
+    uint public price = 100; // notOwned per 100 Owned
     MintableToken public ownedCoin;
     MintableToken public notOwnedCoin;
 
     event PriceChange(uint indexed _old, uint indexed _new);
     event Exchange(address indexed _from, address indexed _to, uint _amount, address indexed _token);
 
-    function Treasury(string _name) public {
-        name = _name;
+    function Treasury() public {
     }
 
     function changeAllowed() public onlyOwner returns (bool success){
@@ -67,14 +85,11 @@ contract Treasury is Owned {
         return true;
     }
 
-    function setOwnedCoin(address _contractAddress) public onlyOwner returns (bool succes){
+    function acceptOwnershipOfCoin(address _contractAddress) public onlyOwner returns (bool success){
+        require(_contractAddress != 0);
         ownedCoin = MintableToken(_contractAddress);
-        return true;
-    }
-
-    function acceptOwnershipOfCoin() public onlyOwner returns (bool success){
-        require(address(ownedCoin) != 0);
         ownedCoin.acceptOwnership();
+        return true;
     }
 
     function returnOwnershipOfOwnedCoin() public onlyOwner returns (bool success){
@@ -98,12 +113,12 @@ contract Treasury is Owned {
 
         MintableToken fromCoin = ownedCoin;
         MintableToken toCoin = notOwnedCoin;
-        uint amountToSend = (_amount * 100) / price;
+        uint amountToSend = (_amount.mul(price)).div(100);
 
         if (msg.sender == address(notOwnedCoin)){
             fromCoin = notOwnedCoin;
             toCoin = ownedCoin;
-            amountToSend = (_amount * 100) / price;
+            amountToSend = (_amount.mul(100)).div(price);
             if (amountToSend > ownedCoin.balanceOf(address(this))){
                 require(ownedCoin.mint(address(this), (amountToSend -  ownedCoin.balanceOf(address(this)))));
             }
@@ -111,7 +126,7 @@ contract Treasury is Owned {
 
         address _to = _sender;
 
-        if(_data.length > 10){ // ==20
+        if(_data.length == 20){ // ==20
             _to = bytesToAddr(_data);
         }
 
@@ -131,6 +146,3 @@ contract Treasury is Owned {
     }
 
 }
-
-// https://medium.com/@jgm.orinoco/ethereum-smart-service-payment-with-tokens-60894a79f75c
-// https://github.com/ethereum/EIPs/issues/677
