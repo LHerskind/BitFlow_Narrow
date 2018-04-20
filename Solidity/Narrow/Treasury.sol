@@ -120,13 +120,13 @@ contract Treasury is Owned {
             toCoin = ownedCoin;
             amountToSend = (_amount.mul(100)).div(price);
             if (amountToSend > ownedCoin.balanceOf(address(this))){
-                require(ownedCoin.mint(address(this), (amountToSend -  ownedCoin.balanceOf(address(this)))));
+                require(ownedCoin.mint(address(this), (amountToSend.sub(ownedCoin.balanceOf(address(this))))));
             }
         }
 
         address _to = _sender;
 
-        if(_data.length == 20){
+        if(_data.length == 20){ // ==20
             _to = bytesToAddr(_data);
         }
 
