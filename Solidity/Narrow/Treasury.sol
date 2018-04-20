@@ -126,7 +126,7 @@ contract Treasury is Owned {
 
         address _to = _sender;
 
-        if(_data.length == 20){ // ==20
+        if(_data.length == 20){
             _to = bytesToAddr(_data);
         }
 
