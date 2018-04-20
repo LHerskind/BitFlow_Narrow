@@ -1,5 +1,24 @@
 pragma solidity ^0.4.19;
 
+library SafeMath {
+    function add(uint a, uint b) internal pure returns (uint c) {
+        c = a + b;
+        require(c >= a);
+     }
+    function sub(uint a, uint b) internal pure returns (uint c) {
+        require(b <= a);
+            c = a - b;
+    }
+    function mul(uint a, uint b) internal pure returns (uint c) {
+        c = a * b;
+        require(a == 0 || c / a == b);
+    }
+    function div(uint a, uint b) internal pure returns (uint c) {
+        require(b > 0);
+        c = a / b;
+    }
+}
+
 contract Owned {
 	address public owner;
 	address public newOwner;
@@ -204,7 +223,7 @@ contract Department is Owned{
 	
 	function changeBudget(address _to, uint _time, uint _amount) onlyEmployee public returns (bool){
 		require(_amount >= 0);
-		uint time = (_time+3600000) / 1000 / 60 / 60 / 24; // To get a different day each budget, at the minimum
+		uint time = (_time.add(3600000)).div(86400000) //(_time+3600000) / 1000 / 60 / 60 / 24. To get a different day each budget, at the minimum
 
 		if(budgetMapping[_to].dates.length == 0){
 			budgetList.push(_to);
@@ -252,7 +271,3 @@ contract SimpleDepartment is Department{
 	}
 
 }
-
-// https://medium.com/@jgm.orinoco/ethereum-smart-service-payment-with-tokens-60894a79f75c
-// https://github.com/ethereum/EIPs/issues/677
-// https://stackoverflow.com/questions/42230532/getting-the-address-of-a-contract-deployed-by-another-contract
