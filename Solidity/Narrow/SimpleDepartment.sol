@@ -60,10 +60,13 @@ contract DepartmentCreatorInterface{
 
 
 contract Department is Owned{
+	using SafeMath for uint;
+
 	struct BudgetElement {
 		uint[] dates;
 		mapping(uint => uint) amounts;
 	}
+	
 
 	string public name;
 	address public departmentSupervisor;
